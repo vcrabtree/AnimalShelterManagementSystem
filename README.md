@@ -23,5 +23,7 @@ https://app.zenhub.com/workspaces/comp-345-team-5e60009c68d1b5ac6b247f58/board?r
 Slack Workspace:
 https://join.slack.com/t/comp345teamhq/shared_invite/enQ
 
+UML Diagram for Sprint One:
+https://drive.google.com/file/d/1W61KJMP4IWZuzKmVF5V4L8CxDeqyQtlQ/view?usp=sharing
 
 Sprint 1 goal: Be able to manage a database of animals through a seperate, password locked class
