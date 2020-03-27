@@ -15,9 +15,9 @@ class TestClassTest {
     public void AnimalTests(){
 
         //assertEquals(1, animalList.getCount());
-        Animal a1 = new Animal("Spot", "Canine");
+        Animal a1 = new Animal(101,"Spot", "Canine","Boarder Collie", "Black","3","male",15,1);
         assertEquals("Spot", a1.getName());
-        assertEquals("Canine", a1.getSpecies());
+
 
     }
 
@@ -28,14 +28,14 @@ class TestClassTest {
         assertEquals(0,al1.getCount());
 
         //Get Count Test
-        al1.addAnimal("Doodle", "Feline");
+        al1.addAnimal(101,"Doodle", "Canine","Boarder Collie", "Black","3","male",15,1);
         assertEquals(1,al1.getCount());
 
 
         //Search List Tests
         assertEquals(0, al1.searchList("Doodle")); // first position in list
         assertEquals(-1, al1.searchList("Zipper")); //not in list
-        al1.addAnimal("Spike", "Pantherophis guttatus");
+        al1.addAnimal(102,"Spike", "Pantherophis guttatus","Corn Snake", "Orange","3","male",2,1);
         assertEquals(1, al1.searchList("Spike")); // first position in list
 
         //Remove Animal Tests

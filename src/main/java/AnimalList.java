@@ -12,8 +12,8 @@ public class AnimalList {
 
     }
 
-    public void addAnimal(String nameIn, String speciesIn){
-        Animal temp = new Animal(nameIn,speciesIn);
+    public void addAnimal(int ID, String name, String species, String breed, String color, String age, String sex, int weight, int status){
+        Animal temp = new Animal(ID,name,species,breed,color,age,sex,weight,status);
         this.animalList.add(temp);
         this.animalCount += 1;
 
