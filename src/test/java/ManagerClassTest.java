@@ -6,6 +6,9 @@ public class ManagerClassTest {
 
     @Test
     public void checkStatusTest(){
+        AnimalList al1 = new AnimalList;
+
+        assertEquals(1, checkStatus(1234));
     }
 
 
