@@ -1,4 +1,5 @@
 
+
 public class Manager {
     private String id;
     private String password;
@@ -19,8 +20,5 @@ public class Manager {
     public String getPassword() {
         return password;
     }
-
-
-
 
 }
