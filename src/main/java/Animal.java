@@ -42,8 +42,9 @@ public class Animal {
     public String getBreed() {
         return breed;
     }
-    public String setBreed(String newBreed) {
+    public void setBreed(String newBreed) {
         breed = newBreed;
+
     }
 
     public String getColor() {
