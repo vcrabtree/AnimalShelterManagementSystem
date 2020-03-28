@@ -11,6 +11,19 @@ public class Manager {
 
     }
 
+    public boolean validateCredentials(String name, String passwordGiven) throws AccountDoesNotExistException {
+        if (name != id) {
+            throw new AccountDoesNotExistException("This account does not exists");
+        }
+        if (passwordGiven == password) {
+            return true;
+        }
+        else {
+            return false;
+        }
+        //TODO add file for AccountDoesNotExistException
+    }
+
 
 
     public String getId() {
