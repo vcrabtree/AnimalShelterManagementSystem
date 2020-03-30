@@ -38,7 +38,7 @@ class EmployeeCollectionTest {
         // Incorrect Password for Manager Account
         assertFalse(manager1.validateCredentials("Manager", "")); // no password
         assertFalse(manager1.validateCredentials("Manager", "wrong")); // random password
-        assertFalse(manager1.validateCredentials("Manager, "pasword")); // close to correct password
+        assertFalse(manager1.validateCredentials("Manager", "pasword")); // close to correct password
 
         // Correct Password for Manager Account
         assertTrue(manager1.validateCredentials("Manager", "password"));

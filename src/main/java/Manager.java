@@ -12,10 +12,10 @@ public class Manager {
     }
 
     public boolean validateCredentials(String name, String passwordGiven) throws AccountDoesNotExistException {
-        if (name != id) {
+        if (name.!equals(id)) {
             throw new AccountDoesNotExistException("This account does not exists");
         }
-        if (passwordGiven == password) {
+        if (passwordGiven.equals(password)) {
             return true;
         }
         else {
