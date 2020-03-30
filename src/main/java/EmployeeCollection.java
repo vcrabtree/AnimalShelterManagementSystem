@@ -7,7 +7,7 @@ public class EmployeeCollection {
         managers = new HashMap<>();
     }
 
-    public void addManager(String idM, String passwordM) throws Exception{
+    public void addManager(String idM, String passwordM) throws Exception {
         if(managers.get(idM)!= null){
             throw new IllegalArgumentException("Manger Already Exists");
         }
@@ -22,9 +22,9 @@ public class EmployeeCollection {
 
 
 
-    public boolean checkCredentials(String ID, String password){
+    public boolean checkCredentials(String ID, String password) throws AccountDoesNotExistException {
         if(managers.get(ID) == null){
-            throw new IllegalArgumentException(("Account doesn't exist"));
+            throw new AccountDoesNotExistException(("Account doesn't exist"));
         }
         else{
             return managers.get(ID).getPassword().equals(password);

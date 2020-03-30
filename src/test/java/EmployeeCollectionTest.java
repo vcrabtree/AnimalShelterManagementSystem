@@ -27,20 +27,20 @@ class EmployeeCollectionTest {
     }
 
     @Test
-    public void testValidateCredentials() throws AccountDoesNotExistException {
+    public void testValidateCredentials() throws AccountDoesNotExistException, Exception {
         // Create Manager Account
         EmployeeCollection testCollection = new EmployeeCollection();
         testCollection.addManager("Manager", "password");
 
         // Incorrect Password for Manager Account
-        assertFalse(manager1.validateCredentials("Manager", "")); // no password
-        assertFalse(manager1.validateCredentials("Manager", "wrong")); // random password
-        assertFalse(manager1.validateCredentials("Manager", "pasword")); // close to correct password
+        assertFalse(testCollection.checkCredentials("Manager", "")); // no password
+        assertFalse(testCollection.checkCredentials("Manager", "wrong")); // random password
+        assertFalse(testCollection.checkCredentials("Manager", "pasword")); // close to correct password
 
         // Correct Password for Manager Account
-        assertTrue(manager1.validateCredentials("Manager", "password"));
+        assertTrue(testCollection.checkCredentials("Manager", "password"));
 
         // Test Account That Does Not Exist
-        assertThrows(AccountDoesNotExistException.class, () -> manager1.validateCredentials("no", "password"));
+        assertThrows(AccountDoesNotExistException.class, () -> testCollection.checkCredentials("no", "password"));
     }
 }
