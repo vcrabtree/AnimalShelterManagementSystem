@@ -33,7 +33,7 @@ public class EmployeeCollection {
 
 
     public void deleteManagerAcct(String actID) throws IllegalArgumentException {
-        if (managers.get(actID) == null) {
+        if (managers.get(actID) == null || managers.size() == 0) {
             throw new IllegalArgumentException("Manager not registered in the system");
         } else {
             managers.remove(actID);
