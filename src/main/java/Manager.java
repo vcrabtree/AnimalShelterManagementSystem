@@ -1,4 +1,4 @@
-
+import AnimalList;
 
 public class Manager {
     private String id;
@@ -19,6 +19,12 @@ public class Manager {
 
     public String getPassword() {
         return password;
+    }
+  
+    public int checkStatus(int id) {
+        Animal animalToCheck;
+        animalToCheck = al1.searchList(id);
+        return animalToCheck.getStatus();
     }
 
 }
