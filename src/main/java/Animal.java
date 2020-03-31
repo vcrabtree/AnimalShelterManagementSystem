@@ -90,10 +90,11 @@ public class Animal {
     //not yet to be implemented
     //public void updateAllRecords() {}
 
-    public void getNeeds() {
+    public String getNeeds() {
         for(int i=0; i <= needs.size(); i++) {
             System.out.println(needs.get(i));
         }
+        return null;
     }
 
     public void addNeeds(String newNeeds) {

@@ -26,4 +26,7 @@ https://join.slack.com/t/comp345teamhq/shared_invite/enQ
 UML Diagram for Sprint One:
 https://drive.google.com/file/d/1W61KJMP4IWZuzKmVF5V4L8CxDeqyQtlQ/view?usp=sharing
 
+Sprint One Demo Doc:
+https://docs.google.com/document/d/1ZyI0F4pSsJoxB3IikH7ZzIZ5fJ8mBv6GN_7Hxx3UBVQ/edit?usp=sharing
+
 Sprint 1 goal: Be able to manage a database of animals through a seperate, password locked class
