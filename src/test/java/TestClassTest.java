@@ -33,20 +33,26 @@ class TestClassTest {
 
 
         //Search List Tests
-        assertEquals(0, al1.searchList("Doodle")); // first position in list
-        assertEquals(-1, al1.searchList("Zipper")); //not in list
+        assertEquals(0, al1.searchList(101)); // first position in list
+        assertEquals(-1, al1.searchList(3)); //not in list
         al1.addAnimal(102,"Spike", "Pantherophis guttatus","Corn Snake", "Orange","3","male",2,1);
-        assertEquals(1, al1.searchList("Spike")); // first position in list
+        assertEquals(1, al1.searchList(102)); // first position in list
 
         //Remove Animal Tests
-        al1.removeAnimal("Doodle"); //animal in list
+        al1.removeAnimal(101); //animal in list
         assertEquals(1,al1.getCount());
-        assertThrows(IllegalArgumentException.class,()->al1.removeAnimal("Zipper") ); // Illegal Argument - Animal not in list
-        al1.removeAnimal("Spike");
-        assertThrows(EmptyListException.class,()->al1.removeAnimal("Zipper") ); //Empty List
+        assertThrows(IllegalArgumentException.class,()->al1.removeAnimal(600) ); // Illegal Argument - Animal not in list
+        al1.removeAnimal(102);
+        assertThrows(EmptyListException.class,()->al1.removeAnimal(102) ); //Empty List
 
 
+    }
 
-
+    @Test
+    public void AnimalSearchTest(){
+        AnimalList a1 = new AnimalList();
+        a1.addAnimal(101,"Doodle", "Canine","Boarder Collie", "Black","3","male",15,1);
+        Animal animal = a1.animalList.get(0);
+        assertEquals(animal,a1.searchListA(101));
     }
 }
