@@ -1,12 +1,13 @@
 import AnimalList;
 
-    public Manager( String idM,  String passwordM){
+public class Manager {
+    String id;
+    String password;
+
+    public Manager( String idM,  String passwordM) {
         id = idM;
         password = passwordM;
-
     }
-
-
 
     public String getId() {
         return id;
