@@ -17,10 +17,29 @@ public class Manager {
         return password;
     }
 
-    public int checkStatus(int id, AnimalList listIn) {
+    public void updateAnimalStatus(int id, AnimalList listIn, int input){
+        Animal animalToUpdate;
+        animalToUpdate = listIn.searchListA(id);
+        if(input < 1 || input > 2){
+            throw new IllegalArgumentException("Please enter 1 for available or 2 for unavailable");
+        }
+        else{
+            animalToUpdate.setStatus(input);
+        }
+    }
+
+    public String checkStatus(int id, AnimalList listIn) {
         Animal animalToCheck;
         animalToCheck = listIn.searchListA(id);
-        return animalToCheck.getStatus();
+        String status;
+        if(animalToCheck.getStatus() == 1){
+            status = "Available for adoption";
+            return status;
+        }
+        else{
+            status = "Unavailable for adoption";
+            return status;
+        }
     }
 
     public String getNeeds(int id, AnimalList listIn){

@@ -73,6 +73,7 @@ public class Animal {
     public int getStatus() {
         return status;
     }
+
     public void setStatus(int newStatus) {
         status = newStatus;
     }
