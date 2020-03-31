@@ -17,9 +17,9 @@ public class Manager {
         return password;
     }
   
-    public int checkStatus(int id) {
+    public int checkStatus(int id, AnimalList listIn) {
         Animal animalToCheck;
-        animalToCheck = al1.searchList(id);
+        animalToCheck = listIn.searchList(id);
         return animalToCheck.getStatus();
     }
 
