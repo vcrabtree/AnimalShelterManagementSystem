@@ -10,7 +10,6 @@ class TestClassTest {
         assertEquals("Hello", TestClass.printHello());
     }
 
-
     @Test
     public void AnimalTests(){
 
@@ -44,8 +43,6 @@ class TestClassTest {
         assertThrows(IllegalArgumentException.class,()->al1.removeAnimal(600) ); // Illegal Argument - Animal not in list
         al1.removeAnimal(102);
         assertThrows(EmptyListException.class,()->al1.removeAnimal(102) ); //Empty List
-
-
     }
 
     @Test
