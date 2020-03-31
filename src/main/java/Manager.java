@@ -1,4 +1,4 @@
-import AnimalList;
+//import AnimalList;
 
 public class Manager {
     String id;
@@ -16,16 +16,16 @@ public class Manager {
     public String getPassword() {
         return password;
     }
-  
+
     public int checkStatus(int id, AnimalList listIn) {
         Animal animalToCheck;
-        animalToCheck = listIn.searchList(id);
+        animalToCheck = listIn.searchListA(id);
         return animalToCheck.getStatus();
     }
 
-    public String getNeeds(int id){
+    public String getNeeds(int id, AnimalList listIn){
         Animal animalToCheck;
-        animalToCheck = al1.searchList(id);
+        animalToCheck = listIn.searchListA(id);
         return animalToCheck.getNeeds();
     }
 

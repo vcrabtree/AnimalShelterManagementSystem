@@ -46,5 +46,13 @@ public class AnimalList {
         return -1;
     }
 
+    public Animal searchListA(int ID){
+        int i = searchList(ID);
+        if(i != -1){
+            return animalList.get(i);
+        }
+        else{
+        return null;}
+    }
 
 }

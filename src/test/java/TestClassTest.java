@@ -46,7 +46,13 @@ class TestClassTest {
         assertThrows(EmptyListException.class,()->al1.removeAnimal(102) ); //Empty List
 
 
+    }
 
-
+    @Test
+    public void AnimalSearchTest(){
+        AnimalList a1 = new AnimalList();
+        a1.addAnimal(101,"Doodle", "Canine","Boarder Collie", "Black","3","male",15,1);
+        Animal animal = a1.animalList.get(0);
+        assertEquals(animal,a1.searchListA(101));
     }
 }
