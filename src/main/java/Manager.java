@@ -1,10 +1,5 @@
 import AnimalList;
 
-public class Manager {
-    private String id;
-    private String password;
-
-
     public Manager( String idM,  String passwordM){
         id = idM;
         password = passwordM;
@@ -25,6 +20,12 @@ public class Manager {
         Animal animalToCheck;
         animalToCheck = al1.searchList(id);
         return animalToCheck.getStatus();
+    }
+
+    public String getNeeds(int id){
+        Animal animalToCheck;
+        animalToCheck = al1.searchList(id);
+        return animalToCheck.getNeeds();
     }
 
 }
