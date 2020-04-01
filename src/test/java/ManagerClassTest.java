@@ -9,7 +9,7 @@
 //
 //        assertEquals("change bedding", getNeeds(1234));
 //    }
-/
+//
 //    @Test
 //    public void checkStatusTest(){
 //        AnimalList al1 = new AnimalList;

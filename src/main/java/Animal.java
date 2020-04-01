@@ -39,6 +39,10 @@ public class Animal {
         return name;
     }
 
+    public String getSpecies() {
+        return species;
+    }
+
     public String getBreed() {
         return breed;
     }
@@ -78,7 +82,7 @@ public class Animal {
     }
 
     public void getRecords() {
-        for(int i=0; i <= records.size(); i++) {
+        for(int i=0; i < records.size(); i++) {
             System.out.println(records.get(i));
         }
     }
@@ -91,7 +95,7 @@ public class Animal {
     //public void updateAllRecords() {}
 
     public String getNeeds() {
-        for(int i=0; i <= needs.size(); i++) {
+        for(int i=0; i < needs.size(); i++) {
             System.out.println(needs.get(i));
         }
         return null;
@@ -101,8 +105,8 @@ public class Animal {
         needs.add(newNeeds);
     }
     public void removeNeeds(String needsToRemove) {
-        for(int i=0; i <= needs.size(); i++) {
-            if(needs.equals(needsToRemove)) {
+        for(int i=0; i < needs.size(); i++) {
+            if(needs.get(i).equals(needsToRemove)) {
                 needs.remove(i);
             }
         }
