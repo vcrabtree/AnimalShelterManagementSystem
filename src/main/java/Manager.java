@@ -1,4 +1,5 @@
-//import AnimalList;
+
+
 
 public class Manager {
     String id;
