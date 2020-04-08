@@ -36,7 +36,7 @@ Sprint One Retrospective Document:
 https://docs.google.com/document/d/1rOoTE4X-bQfUTIFKRPHITQkxHR0GGhlr0_46FLJrOP4/edit?usp=sharing
 
 ## Sprint Two
-Sprit Two Goal: 
+Sprit Two Goal: Have a completed manager that can interact with a simple to-do list user interface
 
 UML Diagrams for Sprint Two:
 https://drive.google.com/file/d/1fNYjSR7eVruHjZa-4JrROEqM-Gr7_bNq/view?usp=sharing
