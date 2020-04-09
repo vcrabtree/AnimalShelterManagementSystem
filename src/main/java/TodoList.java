@@ -12,4 +12,9 @@ public class TodoList {
             this.toDoList = new ArrayList<>();
 
         }
+
+        public void addTask(Task taskIn){
+            this.taskCount += 1;
+            toDoList.add(taskIn);
+        }
 }
