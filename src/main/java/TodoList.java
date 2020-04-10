@@ -22,4 +22,8 @@ public class TodoList {
             this.taskCount -= 1;
             toDoList.remove(taskToRemove);
         }
+
+        public String getToDoList() {
+            return "Hello";
+        }
 }
