@@ -20,7 +20,7 @@ public class Manager {
     public void updateAnimalStatus(int id, AnimalList listIn, int input){
         Animal animalToUpdate;
         animalToUpdate = listIn.searchListA(id);
-        System.out.println("Please enter 1: Available for adoption \n2: Unavailable for adoption \n3: Status 3 \n4: Status 4");
+        System.out.println("Please enter...\n1: Available for adoption \n2: Unavailable for adoption \n3: Status 3 \n4: Status 4");
         if(input < 1 || input > 4){
             throw new IllegalArgumentException("Please enter 1, 2, 3, or 4.");
         }
@@ -45,12 +45,9 @@ public class Manager {
             status = "Status 3";
             return status;
         }
-        else if(animalToCheck.getStatus() == 4){
+        else{
             status = "Status 4";
             return status;
-        }
-        else{
-            throw new IllegalArgumentException("Must enter a number 1-4");
         }
     }
 
