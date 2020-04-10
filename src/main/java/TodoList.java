@@ -13,7 +13,7 @@ public class TodoList {
 
         }
 
-        public void addTask(Task taskIn){
+        public void addTask(Task taskIn) {
             this.taskCount += 1;
             toDoList.add(taskIn);
         }
@@ -24,6 +24,10 @@ public class TodoList {
         }
 
         public String getToDoList() {
-            return "Hello";
+            String totalList = "";
+            for (int i = 0; i < taskCount; i++) {
+                totalList += (i + 1) + ". " + toDoList.get(i).getTask() + "\n";
+            }
+            return totalList;
         }
 }

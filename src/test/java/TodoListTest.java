@@ -69,14 +69,14 @@ public class TodoListTest {
         todo.addTask(task4);
 
         // Get To-Do List
-        assertEquals("1. Feed dogs \n 2. Take Walter to vet \n 3. Walk dogs \n 4. Play with cats", todo.getToDoList());
+        assertEquals("1. Feed dogs\n2. Play with cats\n3. Walk dogs\n4. Take Walter to vet\n", todo.getToDoList());
 
         // Remove a couple of tasks from To-Do List
         todo.removeTask(task4);
         todo.removeTask(task2);
 
         // Get Updates To-Do List
-        assertEquals("1. Feed dogs \n 2. Walk dogs", todo.getToDoList());
+        assertEquals("1. Feed dogs\n2. Walk dogs\n", todo.getToDoList());
     }
 
 }
