@@ -16,6 +16,10 @@ public class TodoList {
         public void check(){
 
         }
+
+        public void update(){
+            
+        }
         public void addTask(Task taskIn){
             this.taskCount += 1;
             toDoList.add(taskIn);
