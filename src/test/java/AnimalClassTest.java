@@ -55,7 +55,7 @@ public class AnimalClassTest {
     }
 
     @Test
-    public void getAndUpdateStatusTest() {
+    public void getAndSetStatusTest() {
         Animal a1 = new Animal(1234, "name1", "dog", "N/A", "tan", "puppy", "male", 10, 1);
         Animal a2 = new Animal(5678, "name2", "cat", "N/A", "black", "kitten", "male", 8, 2);
         assertEquals(1, a1.getStatus());

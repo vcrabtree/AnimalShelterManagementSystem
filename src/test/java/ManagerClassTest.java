@@ -8,6 +8,16 @@ public class ManagerClassTest {
     }
 
     @Test
+    public void updateStatusTest(){
+        Manager manager1 = new Manager("1", "password");
+        AnimalList al1 = new AnimalList();
+        al1.addAnimal(1,"Max","Dog","Shiba Inu","Tan","Puppy", "Male",12,1);
+        al1.addAnimal(2,"Alex","Dog","German Shepard","Black","Puppy", "Female",9,2);
+
+
+    }
+
+    @Test
     public void checkStatusTest(){
         Manager manager1 = new Manager("1","password");
         AnimalList al1 = new AnimalList();
