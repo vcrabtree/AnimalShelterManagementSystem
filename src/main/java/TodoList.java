@@ -17,4 +17,9 @@ public class TodoList {
             this.taskCount += 1;
             toDoList.add(taskIn);
         }
+
+        public void removeTask(Task taskToRemove) {
+            this.taskCount -= 1;
+            toDoList.remove(taskToRemove);
+        }
 }
