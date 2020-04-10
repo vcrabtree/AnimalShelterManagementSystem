@@ -19,6 +19,7 @@ public class TodoList {
         }
 
         public void removeTask(Task taskToRemove) {
-            //TODO
+            this.taskCount -= 1;
+            toDoList.remove(taskToRemove);
         }
 }
