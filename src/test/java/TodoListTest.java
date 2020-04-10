@@ -34,4 +34,23 @@ public class TodoListTest {
 
     }
 
+    @Test
+    public void removeTaskTest() {
+        // Create To-Do List
+        TodoList todo = new TodoList();
+
+        // Add a couple of tasks to the list
+        Task task1 = new Task(5, "Feed dogs");
+        todo.addTask(task1);
+        Task task2 = new Task(3, "Give Lucy a bath");
+        todo.addTask(task2);
+
+        // Remove both tasks from To-Do List
+        assertEquals(2, todo.taskCount);
+        todo.removeTask(task1);
+        assertEquals(1, todo.taskCount);
+        todo.removeTask(task2);
+        assertEquals(0, todo.taskCount);
+    }
+
 }
