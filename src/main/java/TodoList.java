@@ -14,7 +14,9 @@ public class TodoList {
         }
 
         public void check(){
-
+            for(int i=0; i < taskCount; i++) {
+                System.out.println(toDoList.get(i));
+            }
         }
         public void addTask(Task taskIn){
             this.taskCount += 1;
