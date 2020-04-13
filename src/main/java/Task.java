@@ -1,4 +1,5 @@
-public class Task {
+
+public class Task implements Comparable<Task> {
     int priority = 0;
     String task;
     boolean done;
@@ -19,5 +20,18 @@ public class Task {
     public void markDone(){this.done = true;}
 
 
+    @Override
+    public int compareTo(Task o) {
 
+        if(priority < o.getPriority()){
+            return 1;
+        }
+        else if(priority > o.getPriority()){
+            return -1;
+        }
+
+        else{
+
+        return 0;}
+    }
 }
