@@ -33,7 +33,6 @@ public class TodoListTest {
         assertEquals(2,do1.taskCount);
 
     }
-
     @Test
     public void removeTaskTest() {
         // Create To-Do List
@@ -68,8 +67,10 @@ public class TodoListTest {
         Task task4 = new Task(4, "Take Walter to vet");
         todo.addTask(task4);
 
+        //System.out.println(todo.getToDoList());
+
         // Get To-Do List
-        assertEquals("1. Feed dogs\n2. Play with cats\n3. Walk dogs\n4. Take Walter to vet\n", todo.getToDoList());
+        assertEquals("1. Feed dogs\n2. Take Walter to vet\n3. Walk dogs\n4. Play with cats\n", todo.getToDoList());
 
         // Remove a couple of tasks from To-Do List
         todo.removeTask(task4);
