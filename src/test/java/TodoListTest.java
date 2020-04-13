@@ -53,4 +53,30 @@ public class TodoListTest {
         assertEquals(0, todo.taskCount);
     }
 
+    @Test
+    public void getToDoListTest() {
+        // Create To-Do List
+        TodoList todo = new TodoList();
+
+        // Add a couple of tasks to the list
+        Task task1 = new Task(5, "Feed dogs");
+        todo.addTask(task1);
+        Task task2 = new Task(1, "Play with cats");
+        todo.addTask(task2);
+        Task task3 = new Task(3, "Walk dogs");
+        todo.addTask(task3);
+        Task task4 = new Task(4, "Take Walter to vet");
+        todo.addTask(task4);
+
+        // Get To-Do List
+        assertEquals("1. Feed dogs\n2. Play with cats\n3. Walk dogs\n4. Take Walter to vet\n", todo.getToDoList());
+
+        // Remove a couple of tasks from To-Do List
+        todo.removeTask(task4);
+        todo.removeTask(task2);
+
+        // Get Updates To-Do List
+        assertEquals("1. Feed dogs\n2. Walk dogs\n", todo.getToDoList());
+    }
+
 }
