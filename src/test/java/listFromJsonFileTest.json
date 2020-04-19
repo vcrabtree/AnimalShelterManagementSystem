@@ -1,17 +1,17 @@
 [ {
-  "priority" : 1,
-  "task" : "lock shelter",
+  "priority" : 5,
+  "task" : "Feed dogs",
   "done" : false
 }, {
-  "priority" : 2,
-  "task" : "fill water",
+  "priority" : 1,
+  "task" : "Play with cats",
   "done" : false
 }, {
   "priority" : 3,
-  "task" : "take outside",
+  "task" : "Walk dogs",
   "done" : false
 }, {
   "priority" : 4,
-  "task" : "play with animal",
+  "task" : "Take Walter to vet",
   "done" : false
 } ]
