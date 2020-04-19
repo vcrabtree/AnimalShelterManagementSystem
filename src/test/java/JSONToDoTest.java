@@ -63,10 +63,6 @@ public class JSONToDoTest {
         assertEquals(exp, td1.getToDoList());
         System.out.println(td1.getToDoList()); //Lists prints in priority order
 
-
-
-
-
     }
 
 }
