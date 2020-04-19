@@ -43,4 +43,14 @@ public class TodoList {
 
             return totalList;
         }
+
+        public void fromJson(List listin){
+            Iterator itr = listin.iterator();
+
+            while(itr.hasNext()){
+                Task tIn = (Task) itr.next(); //cast Object as Task
+                this.toDoList.add(tIn);
+            }
+
+        }
 }

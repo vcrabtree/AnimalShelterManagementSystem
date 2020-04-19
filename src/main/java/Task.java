@@ -4,6 +4,25 @@ public class Task implements Comparable<Task> {
     String task;
     boolean done;
 
+    //--- used by json libraries
+    public Task(){ }
+
+    public void setPriority(int priorityIn){
+        this.priority = priorityIn;
+    }
+
+    public void setTask(String taskIn){
+        this.task = taskIn;
+    }
+
+    public void setDone(Boolean bool){
+        this.done = bool;
+    }
+
+
+
+    //--- end json libraries
+
     public Task(int priorityIn, String taskIn){
         this.priority = priorityIn;
         this.task = taskIn;
