@@ -1,0 +1,17 @@
+[ {
+  "priority" : 1,
+  "task" : "lock shelter",
+  "done" : false
+}, {
+  "priority" : 2,
+  "task" : "fill water",
+  "done" : false
+}, {
+  "priority" : 3,
+  "task" : "take outside",
+  "done" : false
+}, {
+  "priority" : 4,
+  "task" : "play with animal",
+  "done" : false
+} ]
