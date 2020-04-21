@@ -41,3 +41,5 @@ Sprit Two Goal: Have a completed manager that can interact with a simple to-do l
 UML Diagrams for Sprint Two:
 https://drive.google.com/file/d/1fNYjSR7eVruHjZa-4JrROEqM-Gr7_bNq/view?usp=sharing
 
+Sprint Review Adgenda: https://docs.google.com/document/d/1R-XlR44mijWRTpUF5hsimiJSQs7C2iwQfIJuvA8uG_Q/edit?usp=sharing
+
