@@ -1,0 +1,25 @@
+[
+  {
+    "ID": 1234,
+    "name": "name1",
+    "speacies": "dog",
+    "breed": "N/A",
+    "color": "tan",
+    "age": "puppy",
+    "sex": "male",
+    "weight": 10,
+    "status": 1
+  },
+  {
+    "ID": 5678,
+    "name": "name2",
+    "speacies": "cat",
+    "breed": "N/A",
+    "color": "black",
+    "age": "kitten",
+    "sex": "female",
+    "weight": 8,
+    "status": 2
+  }
+
+]
