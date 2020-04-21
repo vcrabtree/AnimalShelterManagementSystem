@@ -2,31 +2,57 @@ import java.util.*;
 
 public class TodoList {
 
-        int taskCount;
-        //List<Task> toDoList;
-        Collection<Task> toDoList;
+    int taskCount;
+    //List<Task> toDoList;
+    Collection<Task> toDoList;
 
 
-        public TodoList(){
-            this.taskCount = 0;
-            this.toDoList = new PriorityQueue<>();
+    public TodoList() {
+        this.taskCount = 0;
+        this.toDoList = new PriorityQueue<>();
 
-        }
+    }
 
-        public void check(){
-            for(int i=0; i < taskCount; i++) {
+    public void check(){
+        for(int i=0; i < taskCount; i++) {
                 System.out.println(toDoList.get(i));
+        }
+    }
+    public void addTask(Task taskIn) {
+        this.taskCount += 1;
+        toDoList.add(taskIn);
+    }
+
+    public void removeTask(Task taskToRemove) {
+        this.taskCount -= 1;
+        toDoList.remove(taskToRemove);
+    }
+
+    public String updateTask(String taskToUpdate, String updateType, String newTaskName, int newPriority) {
+
+
+        for (Object taskToLookAt : toDoList) {
+            Task t = (Task) taskToLookAt;
+
+            if (t.getTask().equals(taskToUpdate)) {
+                switch (updateType) {
+                    case "task":
+                        t.setTask(newTaskName);
+                        break;
+                    case "priority":
+                        t.setPriority(newPriority);
+                        break;
+                    case "both":
+                        t.setTask(newTaskName);
+                        t.setPriority(newPriority);
+                        break;
+                }
+                return "Task Updated";
             }
         }
-        public void addTask(Task taskIn){
-            this.taskCount += 1;
-            toDoList.add(taskIn);
-        }
+        return "Item not found on the list";
+    }
 
-        public void removeTask(Task taskToRemove) {
-            this.taskCount -= 1;
-            toDoList.remove(taskToRemove);
-        }
 
 
 
