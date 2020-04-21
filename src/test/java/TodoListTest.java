@@ -53,6 +53,63 @@ public class TodoListTest {
     }
 
     @Test
+    /*
+     * Test Script
+     *
+     * Test for task update
+     * starts as "feed dogs"
+     * change it to "feed dog 1"
+     * should pass and print the change
+     *
+     * test for priority
+     * for task "Feed dog 1" (previously "Feed dogs")
+     * starting priority is 5
+     * change to 2
+     * should pass and print the change
+     *
+     * test for both
+     * change "feed dog 1" back to feed dogs
+     * change the priority back to 5
+     * should pass and print the change
+     *
+     * test for a task not in the list
+     * look for "feed cats"
+     * should pass and print task not found
+     *
+    */
+
+    public void updateTaskTest(){
+        // Create To-Do List
+        TodoList todo = new TodoList();
+
+        // Add a couple of tasks to the list
+        Task task1 = new Task(5, "Feed dogs");
+        todo.addTask(task1);
+        Task task2 = new Task(1, "Play with cats");
+        todo.addTask(task2);
+        Task task3 = new Task(3, "Walk dogs");
+        todo.addTask(task3);
+        Task task4 = new Task(4, "Take Walter to vet");
+        todo.addTask(task4);
+
+        //to feed dog 1
+        assertEquals("Task Updated", todo.updateTask("Feed dogs", "task", "Feed dog 1",task1.priority));
+        todo.getToDoList();
+
+        //to priority to 2
+        assertEquals("Task Updated", todo.updateTask("Feed dog 1","priority", task1.getTask(),2));
+        todo.getToDoList();
+
+        //back to feed dogs and priority 5
+        assertEquals("Task Updated", todo.updateTask("Feed dog 1", "both", "Feed dogs", 5));
+        todo.getToDoList();
+
+        //task not in list
+        assertEquals("Item not found on the list", todo.updateTask("Feed cats", "both", "feed animal", 4));
+
+    }
+
+    @Test
     public void getToDoListTest() {
         // Create To-Do List
         TodoList todo = new TodoList();
