@@ -13,10 +13,20 @@ public class TodoList {
 
     }
 
-    public void check(){
-        for(int i=0; i < taskCount; i++) {
-                System.out.println(toDoList.get(i));
+    public String check(){
+        String tasks = "";
+        if(toDoList.isEmpty()){
+            tasks = "The list is empty";
+            System.out.println(tasks);
         }
+        else{
+            for(Task t : toDoList) {
+                tasks = tasks + t.getTask() + "\n";
+                System.out.println(t.getTask());
+            }
+
+        }
+        return tasks;
     }
     public void addTask(Task taskIn) {
         this.taskCount += 1;

@@ -137,4 +137,31 @@ public class TodoListTest {
         assertEquals("1. Feed dogs\n2. Walk dogs\n", todo.getToDoList());
     }
 
+    @Test
+    public void checkToDoListTest(){
+        // Create To-Do List
+        TodoList todo = new TodoList();
+
+        Task task1 = new Task(5, "Feed dogs");
+        todo.addTask(task1);
+        Task task2 = new Task(1, "Play with cats");
+        todo.addTask(task2);
+        Task task3 = new Task(3, "Walk dogs");
+        todo.addTask(task3);
+        Task task4 = new Task(4, "Take Walter to vet");
+        todo.addTask(task4);
+
+        assertEquals("Feed dogs\nTake Walter to vet\nWalk dogs\nPlay with cats\n",todo.check());
+
+        todo.removeTask(task1);
+        todo.removeTask(task2);
+        todo.removeTask(task3);
+        todo.removeTask(task4);
+
+
+        //check for empty list
+        assertEquals("The list is empty",todo.check());
+
+    }
+
 }
