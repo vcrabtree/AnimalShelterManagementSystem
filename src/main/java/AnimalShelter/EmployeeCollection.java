@@ -1,3 +1,5 @@
+package AnimalShelter;
+
 import java.util.HashMap;
 
 public class EmployeeCollection {
@@ -12,7 +14,7 @@ public class EmployeeCollection {
             throw new IllegalArgumentException("Manger Already Exists");
         }
         else if(managers.size() >= 1){
-            throw new LimitException("Manager count limit has been reached");
+            throw new LimitException("AnimalShelter.Manager count limit has been reached");
         }
         else{
             managers.put(idM, new Manager(idM, passwordM));
@@ -34,7 +36,7 @@ public class EmployeeCollection {
 
     public void deleteManagerAcct(String actID) throws IllegalArgumentException {
         if (managers.get(actID) == null || managers.size() == 0) {
-            throw new IllegalArgumentException("Manager not registered in the system");
+            throw new IllegalArgumentException("AnimalShelter.Manager not registered in the system");
         } else {
             managers.remove(actID);
         }

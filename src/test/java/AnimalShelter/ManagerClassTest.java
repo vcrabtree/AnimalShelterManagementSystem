@@ -5,14 +5,14 @@
 //public class ManagerClassTest {
 //    @Test
 //    public void getNeedsTest(){
-//        AnimalList al1 = new AnimalList;
+//        AnimalShelter.AnimalList al1 = new AnimalShelter.AnimalList;
 //
 //        assertEquals("change bedding", getNeeds(1234));
 //    }
 //
 //    @Test
 //    public void checkStatusTest(){
-//        AnimalList al1 = new AnimalList;
+//        AnimalShelter.AnimalList al1 = new AnimalShelter.AnimalList;
 //
 //        assertEquals(1, checkStatus(1234));
 //    }

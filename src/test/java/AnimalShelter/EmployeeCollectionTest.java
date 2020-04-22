@@ -1,3 +1,8 @@
+package AnimalShelter;
+
+import AnimalShelter.AccountDoesNotExistException;
+import AnimalShelter.EmployeeCollection;
+import AnimalShelter.LimitException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,17 +32,17 @@ class EmployeeCollectionTest {
 
     @Test
     public void testValidateCredentials() throws AccountDoesNotExistException, Exception {
-        // Create Manager Account
+        // Create AnimalShelter.Manager Account
         EmployeeCollection testCollection = new EmployeeCollection();
-        testCollection.addManager("Manager", "password");
+        testCollection.addManager("AnimalShelter.Manager", "password");
 
-        // Incorrect Password for Manager Account
-        assertFalse(testCollection.checkCredentials("Manager", "")); // no password
-        assertFalse(testCollection.checkCredentials("Manager", "wrong")); // random password
-        assertFalse(testCollection.checkCredentials("Manager", "pasword")); // close to correct password
+        // Incorrect Password for AnimalShelter.Manager Account
+        assertFalse(testCollection.checkCredentials("AnimalShelter.Manager", "")); // no password
+        assertFalse(testCollection.checkCredentials("AnimalShelter.Manager", "wrong")); // random password
+        assertFalse(testCollection.checkCredentials("AnimalShelter.Manager", "pasword")); // close to correct password
 
-        // Correct Password for Manager Account
-        assertTrue(testCollection.checkCredentials("Manager", "password"));
+        // Correct Password for AnimalShelter.Manager Account
+        assertTrue(testCollection.checkCredentials("AnimalShelter.Manager", "password"));
 
         // Test Account That Does Not Exist
         assertThrows(AccountDoesNotExistException.class, () -> testCollection.checkCredentials("no", "password"));

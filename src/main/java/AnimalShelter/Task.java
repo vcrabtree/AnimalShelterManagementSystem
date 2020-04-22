@@ -1,3 +1,5 @@
+package AnimalShelter;
+
 public class Task {
     int priority = 0;
     String task;
