@@ -1,10 +1,30 @@
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ManagerClassTest {
     @Test
     public void getNeedsTest(){
+    }
+
+    @Test
+    public void updateRecordsTest(){
+        Manager mg1 = new Manager("1","password");
+        AnimalList al1 = new AnimalList();
+        al1.addAnimal(123,"Oscar","dog","n/a","brown","4","Male",25,1);
+        assertEquals("No records available", mg1.getRecords(123,al1));
+        mg1.updateAnimalRecords(123,al1,"Received vaccinations");
+        assertEquals("Received vaccinations\n",mg1.getRecords(123,al1));
+    }
+
+    @Test
+    public void getRecordsTest(){
+        Manager mg1 = new Manager("1", "password");
+        AnimalList al1 = new AnimalList();
+        al1.addAnimal(01,"Alex", "dog", "n/a", "black", "10","female",30,2);
+        mg1.updateAnimalRecords(01,al1,"Record 1");
+        mg1.updateAnimalRecords(01,al1,"Record 2");
+        mg1.updateAnimalRecords(01,al1,"Record 3");
+        assertEquals("Record 1\nRecord 2\nRecord 3\n",mg1.getRecords(01,al1));
     }
 
     @Test

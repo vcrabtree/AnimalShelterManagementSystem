@@ -1,5 +1,7 @@
 //import AnimalList;
 
+import java.util.List;
+
 public class Manager {
     String id;
     String password;
@@ -15,6 +17,27 @@ public class Manager {
 
     public String getPassword() {
         return password;
+    }
+
+    public void updateAnimalRecords(int id, AnimalList listIn, String input){
+        Animal animalToUpdate;
+        animalToUpdate = listIn.searchListA(id);
+        animalToUpdate.addRecords(input);
+    }
+
+    public String getRecords(int id, AnimalList listIn){
+        Animal recsToGet;
+        recsToGet = listIn.searchListA(id);
+        String recs = "";
+        for(int i = 0; i < recsToGet.records.size(); i++){
+            recs += recsToGet.records.get(i) + "\n";
+        }
+        if(recs == ""){
+            return "No records available";
+        }
+        else{
+            return recs;
+        }
     }
 
     public void updateAnimalStatus(int id, AnimalList listIn, int input){
