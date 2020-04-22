@@ -59,14 +59,15 @@ public class AnimalClassTest {
     }
 
     @Test
-    public void getAndUpdateStatusTest() {
-        Animal a1 = new Animal(1234, "name1", "dog", "N/A", "tan", "puppy", "male", 10, 0);
-
-        assertEquals(0, a1.getStatus());
-
-        a1.setStatus(1);
-
+    public void getAndSetStatusTest() {
+        Animal a1 = new Animal(1234, "name1", "dog", "N/A", "tan", "puppy", "male", 10, 1);
+        Animal a2 = new Animal(5678, "name2", "cat", "N/A", "black", "kitten", "male", 8, 2);
         assertEquals(1, a1.getStatus());
+        assertEquals(2, a2.getStatus());
+        a1.setStatus(2);
+        a2.setStatus(1);
+        assertEquals(2, a1.getStatus());
+        assertEquals(1, a2.getStatus());
     }
 
 }

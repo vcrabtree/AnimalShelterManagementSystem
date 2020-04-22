@@ -6,6 +6,7 @@ import java.util.List;
 public class AnimalList {
     int animalCount;
     List<Animal> animalList;
+    Animal a1;
 
 
     public AnimalList(){
@@ -55,6 +56,19 @@ public class AnimalList {
         }
         else{
         return null;}
+    }
+
+    //Testing get needs for UI
+
+    public void addNeeds(int aID, String newNeeds) {
+        if (animalList.get(aID) == null) {
+            throw new IllegalArgumentException("animal not in the system");
+        } else {
+            System.out.println("in progress, not yet implemented");
+
+        }
+
+
     }
 
 }

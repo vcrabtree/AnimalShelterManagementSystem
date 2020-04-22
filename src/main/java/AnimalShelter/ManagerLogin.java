@@ -30,6 +30,8 @@ public class ManagerLogin {
         return animalToCheck.getNeeds();
     }
     public void addRecords(String newRecord){
+        System.out.println("in progress, not yet implemented");
+
 
     }
     public void removeNeeds(String needsToRemove) {
@@ -40,6 +42,7 @@ public class ManagerLogin {
         }
     }
     public void updateRecords(String recordName){
+        System.out.println("in progress, not yet implemented");
 
 
         }
