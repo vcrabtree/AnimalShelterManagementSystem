@@ -46,9 +46,9 @@ public class TodoListTest {
 
         // Remove both tasks from To-Do List
         assertEquals(2, todo.taskCount);
-        todo.removeTask(task1);
+        todo.removeTask("Feed Dogs");
         assertEquals(1, todo.taskCount);
-        todo.removeTask(task2);
+        todo.removeTask("Give Lucy a bath");
         assertEquals(0, todo.taskCount);
     }
 
@@ -92,20 +92,26 @@ public class TodoListTest {
         Task task4 = new Task(4, "Take Walter to vet");
         todo.addTask(task4);
 
+
+
         //to feed dog 1
-        assertEquals("Task Updated", todo.updateTask("Feed dogs", "task", "Feed dog 1",task1.priority));
+        Task updatedTask = new Task(task1.priority, "Feed dog 1");
+        todo.updateTask("Feed dogs", "Feed dog 1",task1.priority);
+        //assertEquals(updatedTask, task1);
         todo.getToDoList();
 
         //to priority to 2
-        assertEquals("Task Updated", todo.updateTask("Feed dog 1","priority", task1.getTask(),2));
+        updatedTask = new Task(2, "Feed dog 1");
+        //assertEquals(updatedTask, task1);
         todo.getToDoList();
 
         //back to feed dogs and priority 5
-        assertEquals("Task Updated", todo.updateTask("Feed dog 1", "both", "Feed dogs", 5));
+        updatedTask = new Task(2, "Feed dog 1");
+        //assertEquals(updatedTask, task1);
         todo.getToDoList();
 
         //task not in list
-        assertEquals("Item not found on the list", todo.updateTask("Feed cats", "both", "feed animal", 4));
+        //assertEquals("Item not found on the list", todo.updateTask("Feed cats", "feed animal", 4));
 
     }
 
@@ -130,8 +136,8 @@ public class TodoListTest {
         assertEquals("1. Feed dogs\n2. Take Walter to vet\n3. Walk dogs\n4. Play with cats\n", todo.getToDoList());
 
         // Remove a couple of tasks from To-Do List
-        todo.removeTask(task4);
-        todo.removeTask(task2);
+        todo.removeTask("Take Walter to vet");
+        todo.removeTask("Walk dogs");
 
         // Get Updates To-Do List
         assertEquals("1. Feed dogs\n2. Walk dogs\n", todo.getToDoList());
@@ -153,15 +159,17 @@ public class TodoListTest {
 
         assertEquals("Feed dogs\nTake Walter to vet\nWalk dogs\nPlay with cats\n",todo.check());
 
-        todo.removeTask(task1);
-        todo.removeTask(task2);
-        todo.removeTask(task3);
-        todo.removeTask(task4);
+        todo.removeTask("Feed dogs");
+        todo.removeTask("Play with cats");
+        todo.removeTask("Walk dogs");
+        todo.removeTask("Take Walter to vet");
 
 
         //check for empty list
         assertEquals("The list is empty",todo.check());
 
     }
+
+
 
 }

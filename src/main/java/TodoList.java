@@ -1,6 +1,7 @@
+import java.io.IOException;
 import java.util.*;
 
-public class TodoList {
+public class TodoList implements ToDoListAPI{
 
     int taskCount;
     //List<Task> toDoList;
@@ -33,40 +34,35 @@ public class TodoList {
         toDoList.add(taskIn);
     }
 
-    public void removeTask(Task taskToRemove) {
-        this.taskCount -= 1;
-        toDoList.remove(taskToRemove);
-    }
-
-    public String updateTask(String taskToUpdate, String updateType, String newTaskName, int newPriority) {
-
-
+    public void removeTask(String taskToRemove) {
         for (Object taskToLookAt : toDoList) {
             Task t = (Task) taskToLookAt;
 
-            if (t.getTask().equals(taskToUpdate)) {
-                switch (updateType) {
-                    case "task":
-                        t.setTask(newTaskName);
-                        break;
-                    case "priority":
-                        t.setPriority(newPriority);
-                        break;
-                    case "both":
-                        t.setTask(newTaskName);
-                        t.setPriority(newPriority);
-                        break;
-                }
-                return "Task Updated";
+            if (t.getTask().equals(taskToRemove)) {
+                    toDoList.remove(t);
+
             }
         }
-        return "Item not found on the list";
+    }
+
+    public void updateTask(String taskToUpdate, String newTaskName, int newPriority) {
+
+        Iterator itr = toDoList.iterator();
+
+        while(itr.hasNext()){
+            Object o = itr.next();
+            Task t = (Task) o;
+            if (t.getTask().equals(taskToUpdate)) {
+                t.setTask(newTaskName);
+                t.setPriority(newPriority);
+            }
+        }
     }
 
 
 
 
-        public String getToDoList() {
+    public String getToDoList() {
             Iterator itr = toDoList.iterator();
             int i  = 1;
 
@@ -84,6 +80,7 @@ public class TodoList {
 
             return totalList;
         }
+
 
         public void fromJson(List listin){
             Iterator itr = listin.iterator();
