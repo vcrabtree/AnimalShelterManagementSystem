@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class VolunteerTest {
 
     @Test
-    void createVolunteer() throws Exception{
+    void createVolunteer() {
         // Create Volunteer
         Volunteer v1 = new Volunteer("One", "Password");
 
