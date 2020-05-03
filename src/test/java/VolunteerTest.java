@@ -38,19 +38,20 @@ public class VolunteerTest {
         // Add Volunteers to the Queue
         queue1.addVolunteer(v1.getId(), v1.getPassword());
         assertEquals(1, queue1.volunteerCount());
-        assertEquals("One", queue1.toString());
+        assertEquals("One\n", queue1.toString());
         queue1.addVolunteer(v2.getId(), v2.getPassword());
         assertEquals(2, queue1.volunteerCount());
-        assertEquals("One, Two", queue1.toString());
+        assertEquals("One\nTwo\n", queue1.toString());
         queue1.addVolunteer(v3.getId(), v3.getPassword());
         assertEquals(3, queue1.volunteerCount());
-        assertEquals("One, Two, Three", queue1.toString());
+        assertEquals("One\nTwo\nThree\n", queue1.toString());
         assertThrows(AccountAlreadyExistsException.class, ()-> queue1.addVolunteer(v1.getId(), v1.getPassword()));
 
         // Remove a Volunteers from the Queue
-        queue1.removeVolunteer(v2.getId(), v2.getPassword());
+        queue1.removeVolunteer(v2.getId());
         assertEquals(2, queue1.volunteerCount());
-        assertEquals("One, Three", queue1.toString());
+        assertEquals("One\nThree\n", queue1.toString());
+        assertThrows(AccountDoesNotExistException.class, ()-> queue1.removeVolunteer(v2.getId()));
     }
 
 }

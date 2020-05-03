@@ -5,26 +5,29 @@ public class VolunteerQueue {
     private Queue<Volunteer> queue;
 
     public VolunteerQueue() {
-        Queue<Volunteer> queue = new LinkedList<>();
+        queue = new LinkedList<>();
     }
 
     public void addVolunteer(String ID, String password) throws AccountAlreadyExistsException {
         Volunteer newVol = new Volunteer(ID, password);
-        if (queue.contains(newVol)) {
-            throw new AccountAlreadyExistsException("Volunteer Already Exists");
+        for (Volunteer vol : queue) {
+            if (vol.getId() == newVol.getId()) {
+                throw new AccountAlreadyExistsException("Volunteer Already Exists");
+            }
         }
-        else {
-            queue.add(newVol);
-        }
+        queue.add(newVol);
     }
 
-    public void removeVolunteer(String ID, String password) throws AccountDoesNotExistException {
-        Volunteer volToRemove = new Volunteer(ID, password);
-        if (!(queue.contains(volToRemove))) {
-            throw new AccountDoesNotExistException(("Account doesn't exist"));
+    public void removeVolunteer(String ID) throws AccountDoesNotExistException {
+        boolean found = false;
+        for (Volunteer vol : queue) {
+            if (vol.getId() == ID) {
+                queue.remove(vol);
+                found = true;
+            }
         }
-        else {
-            queue.remove(volToRemove);
+        if (found == false) {
+            throw new AccountDoesNotExistException(("Account doesn't exist"));
         }
     }
 
@@ -45,7 +48,7 @@ public class VolunteerQueue {
     public String toString() {
         String volunteerString = "";
         for (Volunteer vol : queue) {
-            volunteerString += vol.toString() + ", ";
+            volunteerString += vol.getId() + "\n";
         }
         return volunteerString;
     }
