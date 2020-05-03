@@ -1,29 +1,52 @@
-import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class VolunteerQueue {
-    private Volunteer front;
-    private Volunteer end;
+    private Queue<Volunteer> queue;
 
     public VolunteerQueue() {
-        front = null;
-        end = null;
+        Queue<Volunteer> queue = new LinkedList<>();
     }
 
-    public void addVolunteer(String ID, String password) {
+    public void addVolunteer(String ID, String password) throws AccountAlreadyExistsException {
+        Volunteer newVol = new Volunteer(ID, password);
+        if (queue.contains(newVol)) {
+            throw new AccountAlreadyExistsException("Volunteer Already Exists");
+        }
+        else {
+            queue.add(newVol);
+        }
     }
 
-    public void removeVolunteer(String ID) {
+    public void removeVolunteer(String ID, String password) throws AccountDoesNotExistException {
+        Volunteer volToRemove = new Volunteer(ID, password);
+        if (!(queue.contains(volToRemove))) {
+            throw new AccountDoesNotExistException(("Account doesn't exist"));
+        }
+        else {
+            queue.remove(volToRemove);
+        }
     }
 
     public boolean isEmpty() {
-        return true;
+        if (queue.size() == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public int volunteerCount() {
-        return 0;
+        int size = queue.size();
+        return size;
     }
 
     public String toString() {
-        return "HI";
+        String volunteerString = "";
+        for (Volunteer vol : queue) {
+            volunteerString += vol.toString() + ", ";
+        }
+        return volunteerString;
     }
 }
