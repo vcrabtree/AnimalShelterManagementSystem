@@ -22,4 +22,26 @@ public class Volunteer {
     public void changePassword(String newPassword) {
         password = newPassword;
     }
+
+    public String checkStatus(int id, AnimalList listIn) {
+        Animal animalToCheck;
+        animalToCheck = listIn.searchListA(id);
+        String status;
+        if(animalToCheck.getStatus() == 1){
+            status = "Available for adoption";
+            return status;
+        }
+        else if(animalToCheck.getStatus() == 2){
+            status = "Unavailable for adoption";
+            return status;
+        }
+        else if(animalToCheck.getStatus() == 3){
+            status = "Status 3";
+            return status;
+        }
+        else{
+            status = "Status 4";
+            return status;
+        }
+    }
 }
