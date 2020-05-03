@@ -21,4 +21,35 @@ public class VolunteerTest {
         assertEquals("New", v1.getId());
         assertEquals("newPassword", v1.getPassword());
     }
+
+    @Test
+    void volunteerQueueTest() {
+        // Create Queue
+        VolunteerQueue queue1 = new VolunteerQueue();
+
+        // Check if Queue is Empty
+        assertTrue(queue1.isEmpty());
+
+        // Create a few Volunteers
+        Volunteer v1 = new Volunteer("One", "Password");
+        Volunteer v2 = new Volunteer("Two", "Password1");
+        Volunteer v3 = new Volunteer("Three", "Password2");
+
+        // Add Volunteers to the Queue
+        queue1.addVolunteer(v1.getId(), v1.getPassword());
+        assertEquals(1, queue1.volunteerCount());
+        assertEquals("One", queue1.toString());
+        queue1.addVolunteer(v2.getId(), v2.getPassword());
+        assertEquals(2, queue1.volunteerCount());
+        assertEquals("One, Two", queue1.toString());
+        queue1.addVolunteer(v3.getId(), v3.getPassword());
+        assertEquals(3, queue1.volunteerCount());
+        assertEquals("One, Two, Three", queue1.toString());
+
+        // Remove a Volunteers from the Queue
+        queue1.removeVolunteer(v2.getId());
+        assertEquals(2, queue1.volunteerCount());
+        assertEquals("One, Three", queue1.toString());
+    }
+
 }
