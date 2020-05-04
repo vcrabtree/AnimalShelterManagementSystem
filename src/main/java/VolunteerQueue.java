@@ -11,7 +11,7 @@ public class VolunteerQueue {
     public void addVolunteer(String ID, String password) throws AccountAlreadyExistsException {
         Volunteer newVol = new Volunteer(ID, password);
         for (Volunteer vol : queue) {
-            if (vol.getId() == newVol.getId()) {
+            if (vol.getId().equals(newVol.getId())) {
                 throw new AccountAlreadyExistsException("Volunteer Already Exists");
             }
         }
@@ -21,28 +21,22 @@ public class VolunteerQueue {
     public void removeVolunteer(String ID) throws AccountDoesNotExistException {
         boolean found = false;
         for (Volunteer vol : queue) {
-            if (vol.getId() == ID) {
+            if (vol.getId().equals(ID)) {
                 queue.remove(vol);
                 found = true;
             }
         }
-        if (found == false) {
+        if (!found) {
             throw new AccountDoesNotExistException(("Account doesn't exist"));
         }
     }
 
     public boolean isEmpty() {
-        if (queue.size() == 0) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return queue.size() == 0;
     }
 
     public int volunteerCount() {
-        int size = queue.size();
-        return size;
+        return queue.size();
     }
 
     public String toString() {
