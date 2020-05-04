@@ -55,4 +55,24 @@ public class VolunteerTest {
 
 
     }
+
+
+    @Test
+
+    public void markTaskDone(){
+        Volunteer v1 = new Volunteer("One","Password");
+        TodoList todo = new TodoList();
+
+        Task task1 = new Task(5, "Feed dogs");
+        todo.addTask(task1);
+        todo.addTask(new Task (1, "Clean Cages"));
+
+        assertFalse(task1.getDone());
+        v1.markItemDone(todo,"Feed dogs");
+        assertTrue(task1.getDone());
+
+
+
+
+    }
 }

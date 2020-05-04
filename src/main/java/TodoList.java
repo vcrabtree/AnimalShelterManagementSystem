@@ -45,6 +45,17 @@ public class TodoList implements ToDoListAPI{
         }
     }
 
+    public void markTaskDone(String taskToFind) {
+        for (Object taskToLookAt : toDoList) {
+            Task t = (Task) taskToLookAt;
+
+            if (t.getTask().equals(taskToFind)) {
+                t.markDone();
+            //throw exception task not in list/ or sting not found
+            }
+        }
+    }
+
     public void updateTask(String taskToUpdate, String newTaskName, int newPriority) {
 
         Iterator itr = toDoList.iterator();
@@ -91,4 +102,6 @@ public class TodoList implements ToDoListAPI{
             }
 
         }
+
+
 }

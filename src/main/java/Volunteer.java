@@ -51,4 +51,9 @@ public class Volunteer {
        return toDoList;
 
     }
+
+    public void  markItemDone(TodoList listIn, String taskIn ){
+        listIn.markTaskDone(taskIn);
+
+    }
 }
