@@ -97,7 +97,7 @@ public class Animal {
 
     public String getNeeds() {
         for(int i=0; i < needs.size(); i++) {
-            System.out.println(needs.get(i));
+            System.out.println(needs.get(i)+"\n");
         }
         return null;
     }
