@@ -40,7 +40,7 @@ public class TodoList implements ToDoListAPI{
 
             if (t.getTask().equals(taskToRemove)) {
                     toDoList.remove(t);
-
+            //throw exception task not int list
             }
         }
     }
