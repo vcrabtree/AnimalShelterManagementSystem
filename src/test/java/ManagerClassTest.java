@@ -3,7 +3,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ManagerClassTest {
     @Test
-    public void getNeedsTest(){
+    public void checkNeedsTest(){
+        Manager mg1 = new Manager("1", "password");
+        AnimalList al1 = new AnimalList();
+        al1.addAnimal(01,"Alex", "dog", "n/a", "black", "10","female",30,2);
+        al1.searchListA(01).addNeeds("Vitamins");
+        assertEquals("Vitamins\n", mg1.checkNeeds(01,al1));
+        al1.searchListA(01).addNeeds("Grooming");
+        assertEquals("Vitamins\nGrooming\n", mg1.checkNeeds(01,al1));
     }
 
     @Test
