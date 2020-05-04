@@ -44,4 +44,11 @@ public class Volunteer {
             return status;
         }
     }
+
+    public String checkToDoList(TodoList listIn){
+       String toDoList;
+       toDoList = listIn.getToDoList();
+       return toDoList;
+
+    }
 }

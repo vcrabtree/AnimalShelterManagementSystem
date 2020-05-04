@@ -36,6 +36,22 @@ public class VolunteerTest {
             assertEquals("Available for adoption", v1.checkStatus(3,al1));
             assertEquals("Unavailable for adoption",v1.checkStatus(4,al1));
 
+    }
+
+
+    @Test
+    public void checkToDoList(){
+        Volunteer v1 = new Volunteer("One","Password");
+        TodoList todo = new TodoList();
+
+        Task task1 = new Task(5, "Feed dogs");
+        todo.addTask(task1);
+        todo.addTask(new Task (1, "Clean Cages"));
+
+        assertEquals("1. Feed dogs\n" +
+                "2. Clean Cages\n", v1.checkToDoList(todo) );
+
+        System.out.println(v1.checkToDoList(todo));
 
 
     }
