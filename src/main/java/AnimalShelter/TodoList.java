@@ -1,9 +1,7 @@
-
 package AnimalShelter;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import java.io.IOException;
 import java.util.*;
 
@@ -46,7 +44,18 @@ public class TodoList implements ToDoListAPI{
 
             if (t.getTask().equals(taskToRemove)) {
                     toDoList.remove(t);
+            //throw exception task not int list
+            }
+        }
+    }
 
+    public void markTaskDone(String taskToFind) {
+        for (Object taskToLookAt : toDoList) {
+            Task t = (Task) taskToLookAt;
+
+            if (t.getTask().equals(taskToFind)) {
+                t.markDone();
+            //throw exception task not in list/ or sting not found
             }
         }
     }

@@ -43,3 +43,7 @@ https://drive.google.com/file/d/1fNYjSR7eVruHjZa-4JrROEqM-Gr7_bNq/view?usp=shari
 
 Sprint Review Adgenda: https://docs.google.com/document/d/1R-XlR44mijWRTpUF5hsimiJSQs7C2iwQfIJuvA8uG_Q/edit?usp=sharing
 
+Sprint Two Retrospective Document: https://docs.google.com/document/d/1LsBeMtIhmtZXikSQ5SBt7KXgmcp_F412OZrSn_smjSk/edit?usp=sharing
+
+## Sprint Three
+Sprint Two Goal: Implementing a UI that integerates with all the functionalies already working

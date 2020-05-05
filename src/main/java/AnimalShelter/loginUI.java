@@ -8,7 +8,7 @@ public class loginUI {
         String username = null;
         String ci;
         ManagerLogin Login = ManagerData();
-
+        AnimalList list1 = animalCollect();
 
         System.out.println("Welcome to Fihve Animal Shelter, please enter user Name: ");
         ci = input.next();
@@ -113,6 +113,7 @@ public class loginUI {
                 try {
                     if (Login.confirmCredentials(ci, password)) username = ci;
                     else System.out.println("try again, username or password not found.");
+
                 } catch (IllegalArgumentException e) {
                     System.out.println("Invalid User Name: " + ci);
                 }
@@ -196,7 +197,6 @@ public class loginUI {
             username = null;
 
             System.out.println("logout successful");
-
 
 
         }

@@ -11,7 +11,7 @@ public class EmployeeCollection {
 
     public void addManager(String idM, String passwordM) throws Exception {
         if(managers.get(idM)!= null){
-            throw new IllegalArgumentException("Manger Already Exists");
+            throw new AccountAlreadyExistsException("Manger Already Exists");
         }
         else if(managers.size() >= 1){
             throw new LimitException("AnimalShelter.Manager count limit has been reached");

@@ -17,7 +17,7 @@ class EmployeeCollectionTest {
 
         assertEquals(1, mc.getManagerCount());
         assertThrows(LimitException.class, ()-> mc.addManager("Kris","no123"));
-        assertThrows(IllegalArgumentException.class, ()-> mc.addManager("Amadou", "yes123"));
+        assertThrows(AccountAlreadyExistsException.class, ()-> mc.addManager("Amadou", "yes123"));
     }
 
     @Test

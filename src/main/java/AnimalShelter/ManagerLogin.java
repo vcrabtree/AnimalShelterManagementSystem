@@ -32,7 +32,6 @@ public class ManagerLogin {
     public void addRecords(String newRecord){
         System.out.println("in progress, not yet implemented");
 
-
     }
     public void removeNeeds(String needsToRemove) {
         for (int i = 0; i < needs.size(); i++) {
