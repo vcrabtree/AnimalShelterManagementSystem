@@ -98,15 +98,18 @@ public class Animal {
     //public void updateAllRecords() {}
 
     public String getNeeds() {
+        String stringNeeds = "";
         for(int i=0; i < needs.size(); i++) {
-            System.out.println(needs.get(i));
+            stringNeeds += needs.get(i) + "\n";
+            System.out.println(needs.get(i)+"\n");
         }
-        return null;
+        return stringNeeds;
     }
 
     public void addNeeds(String newNeeds) {
         needs.add(newNeeds);
     }
+
     public void removeNeeds(String needsToRemove) {
         for(int i=0; i < needs.size(); i++) {
             if(needs.get(i).equals(needsToRemove)) {
