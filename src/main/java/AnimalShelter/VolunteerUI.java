@@ -24,16 +24,20 @@ public class VolunteerUI {
                     case "help":
                         System.out.println("Your options are: " +
                                 "\n check animal status" +
+                                "\n check to do list" +
                                 "\n check item off to do list " +
                                 "\n exit \n");
                         break;
 
-                    case "check":
+                    case "check animal status":
                         System.out.println("Enter animal ID to check");
                         task = read.next();
                         System.out.println(volunteerAPI.checkStatus(task, animalListIn));
                         break;
 
+                    case "check to do list":
+                        System.out.println(volunteerAPI.check());
+                        break;
 
                     case "remove task":
                         System.out.println("Enter a task to remove");

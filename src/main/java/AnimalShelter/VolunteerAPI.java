@@ -5,4 +5,8 @@ public interface VolunteerAPI {
     public String checkStatus(int id, AnimalList listIn);
 
     public void removeTask(String taskToRemove);
+
+    public String check();
+
+
 }
