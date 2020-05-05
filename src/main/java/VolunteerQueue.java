@@ -1,3 +1,6 @@
+import AnimalShelter.AccountAlreadyExistsException;
+import AnimalShelter.AccountDoesNotExistException;
+
 import java.util.LinkedList;
 import java.util.Queue;
 

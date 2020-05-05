@@ -1,3 +1,7 @@
+import AnimalShelter.Animal;
+import AnimalShelter.AnimalList;
+import AnimalShelter.TodoList;
+
 public class Volunteer {
     String id;
     String password;
