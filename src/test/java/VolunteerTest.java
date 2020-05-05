@@ -23,6 +23,38 @@ public class VolunteerTest {
     }
 
     @Test
+    void volunteerQueueTest() throws AccountAlreadyExistsException, AccountDoesNotExistException {
+        // Create Queue
+        VolunteerQueue queue1 = new VolunteerQueue();
+
+        // Check if Queue is Empty
+        assertTrue(queue1.isEmpty());
+
+        // Create a few Volunteers
+        Volunteer v1 = new Volunteer("One", "Password");
+        Volunteer v2 = new Volunteer("Two", "Password1");
+        Volunteer v3 = new Volunteer("Three", "Password2");
+
+        // Add Volunteers to the Queue
+        queue1.addVolunteer(v1.getId(), v1.getPassword());
+        assertEquals(1, queue1.volunteerCount());
+        assertEquals("One\n", queue1.toString());
+        queue1.addVolunteer(v2.getId(), v2.getPassword());
+        assertEquals(2, queue1.volunteerCount());
+        assertEquals("One\nTwo\n", queue1.toString());
+        queue1.addVolunteer(v3.getId(), v3.getPassword());
+        assertEquals(3, queue1.volunteerCount());
+        assertEquals("One\nTwo\nThree\n", queue1.toString());
+        assertThrows(AccountAlreadyExistsException.class, ()-> queue1.addVolunteer(v1.getId(), v1.getPassword()));
+
+        // Remove a Volunteers from the Queue
+        queue1.removeVolunteer(v2.getId());
+        assertEquals(2, queue1.volunteerCount());
+        assertEquals("One\nThree\n", queue1.toString());
+        assertThrows(AccountDoesNotExistException.class, ()-> queue1.removeVolunteer(v2.getId()));
+    }
+
+    @Test
     public void checkAnimalStatusTest(){
             Volunteer v1 = new Volunteer("One","Password");
             AnimalList al1 = new AnimalList();
@@ -35,9 +67,7 @@ public class VolunteerTest {
             assertEquals("Unavailable for adoption", v1.checkStatus(2,al1));
             assertEquals("Available for adoption", v1.checkStatus(3,al1));
             assertEquals("Unavailable for adoption",v1.checkStatus(4,al1));
-
     }
-
 
     @Test
     public void checkToDoList(){
@@ -56,9 +86,7 @@ public class VolunteerTest {
 
     }
 
-
     @Test
-
     public void markTaskDone(){
         Volunteer v1 = new Volunteer("One","Password");
         TodoList todo = new TodoList();
@@ -70,9 +98,5 @@ public class VolunteerTest {
         assertFalse(task1.getDone());
         v1.markItemDone(todo,"Feed dogs");
         assertTrue(task1.getDone());
-
-
-
-
     }
 }
