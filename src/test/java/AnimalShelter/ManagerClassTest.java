@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package AnimalShelter;
 import org.junit.jupiter.api.Test;
 
