@@ -1,5 +1,9 @@
+package AnimalShelter;
+
+
 
 public class Task implements Comparable<Task> {
+
     int priority = 0;
     String task;
     boolean done;

@@ -1,6 +1,4 @@
 package AnimalShelter;//import AnimalShelter.AnimalList;
-
-
 import java.util.List;
 
 public class Manager {

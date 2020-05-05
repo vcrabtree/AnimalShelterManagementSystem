@@ -112,7 +112,8 @@ public class loginUI {
                 String password = input.next();
                 try {
                     if (Login.confirmCredentials(ci, password)) username = ci;
-                    else System.out.println("try again.");
+                    else System.out.println("try again, username or password not found.");
+
                 } catch (IllegalArgumentException e) {
                     System.out.println("Invalid User Name: " + ci);
                 }
@@ -194,6 +195,10 @@ public class loginUI {
             } while (!ci.toLowerCase().equals("logout") && !ci.toLowerCase().equals("9"));
 
             username = null;
+
+            System.out.println("logout successful");
+
+
         }
     }
 
@@ -209,6 +214,7 @@ public class loginUI {
     public static AnimalList animalCollect() {
         AnimalList a1 = new AnimalList();
         a1.addAnimal(1, "love", "puppy", "pup", "tan", "2", "Male", 8, 1);
+        a1.addNeeds(1,"shower");
 
         return a1;
 
