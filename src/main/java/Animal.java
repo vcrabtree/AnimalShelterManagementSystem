@@ -107,6 +107,7 @@ public class Animal {
     public void addNeeds(String newNeeds) {
         needs.add(newNeeds);
     }
+
     public void removeNeeds(String needsToRemove) {
         for(int i=0; i < needs.size(); i++) {
             if(needs.get(i).equals(needsToRemove)) {

@@ -18,7 +18,7 @@ public class ManagerClassTest {
         Manager mg1 = new Manager("1", "password");
         AnimalList al1 = new AnimalList();
         al1.addAnimal(01,"Alex", "dog", "n/a", "black", "10","female",30,2);
-        al1.searchListA(01).addNeeds("Vitamins");
+        mg1.updateAnimalNeeds(01,al1,"Vitamins");
         assertEquals("Vitamins\n", mg1.checkNeeds(01,al1));
         mg1.updateAnimalNeeds(01,al1,"Specified food");
         assertEquals("Vitamins\nSpecified food\n", mg1.checkNeeds(01,al1));

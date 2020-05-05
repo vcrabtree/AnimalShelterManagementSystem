@@ -77,7 +77,7 @@ public class Manager {
     public void updateAnimalNeeds(int id, AnimalList listIn, String needs){
         Animal animalToCheck;
         animalToCheck = listIn.searchListA((id));
-        animalToCheck.addRecords(needs);
+        animalToCheck.addNeeds(needs);
     }
 
     public String checkNeeds(int id, AnimalList listIn){
