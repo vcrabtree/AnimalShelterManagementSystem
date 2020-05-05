@@ -1,3 +1,9 @@
+package AnimalShelter;
+
+import AnimalShelter.Animal;
+import AnimalShelter.AnimalList;
+import AnimalShelter.EmptyListException;
+import AnimalShelter.TestClass;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -37,10 +43,10 @@ class TestClassTest {
         al1.addAnimal(102,"Spike", "Pantherophis guttatus","Corn Snake", "Orange","3","male",2,1);
         assertEquals(1, al1.searchList(102)); // first position in list
 
-        //Remove Animal Tests
+        //Remove AnimalShelter.Animal Tests
         al1.removeAnimal(101); //animal in list
         assertEquals(1,al1.getCount());
-        assertThrows(IllegalArgumentException.class,()->al1.removeAnimal(600) ); // Illegal Argument - Animal not in list
+        assertThrows(IllegalArgumentException.class,()->al1.removeAnimal(600) ); // Illegal Argument - AnimalShelter.Animal not in list
         al1.removeAnimal(102);
         assertThrows(EmptyListException.class,()->al1.removeAnimal(102) ); //Empty List
     }

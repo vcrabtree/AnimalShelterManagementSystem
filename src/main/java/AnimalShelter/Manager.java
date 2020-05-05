@@ -1,4 +1,5 @@
-//import AnimalList;
+package AnimalShelter;//import AnimalShelter.AnimalList;
+
 
 import java.util.List;
 
@@ -78,6 +79,10 @@ public class Manager {
         Animal animalToCheck;
         animalToCheck = listIn.searchListA(id);
         return animalToCheck.getNeeds();
+    }
+
+    public boolean checkCredentials(String ID, String password){
+        return false;
     }
 
 }

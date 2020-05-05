@@ -1,14 +1,14 @@
-# Comp-345-Team: Animal Shelter Software
+# Comp-345-Team: AnimalShelter.Animal Shelter Software
 We will be creating a software to help animal shelters better manage their facility
 
 Includes but is not limited to:
-- Animal intake
+- AnimalShelter.Animal intake
 - Updating animal records
 - Adoption
 - Browsing adoptable animals
 - Login system
 - To-do lists for volunteers
-- Keeping track of Animal needs
+- Keeping track of AnimalShelter.Animal needs
 
 
 Google Drive Folder:
