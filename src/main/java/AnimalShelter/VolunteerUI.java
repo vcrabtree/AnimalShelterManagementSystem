@@ -1,4 +1,9 @@
+package AnimalShelter;
+
+
 import AnimalShelter.Animal;
+
+import java.util.Scanner;
 
 public class VolunteerUI {
 

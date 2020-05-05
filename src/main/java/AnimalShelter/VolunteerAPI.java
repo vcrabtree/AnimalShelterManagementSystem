@@ -1,3 +1,5 @@
+package AnimalShelter;
+
 import AnimalShelter.Animal;
 import AnimalShelter.AnimalList;
 
