@@ -45,7 +45,8 @@ class EmployeeCollectionTest {
         assertTrue(testCollection.checkCredentials("AnimalShelter.Manager", "password"));
 
         // Test Account That Does Not Exist
-        assertThrows(AccountDoesNotExistException.class, () -> testCollection.checkCredentials("no", "password"));
+        //assertThrows(AccountDoesNotExistException.class, () -> testCollection.checkCredentials("no", "password"));
+        assertEquals(false,testCollection.checkCredentials("no", "password"));
     }
 
     @Test

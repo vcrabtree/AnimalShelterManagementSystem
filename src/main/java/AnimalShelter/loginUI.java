@@ -109,9 +109,16 @@ public class loginUI {
             }
         } while (!ci.toLowerCase().equals("logout") && !ci.toLowerCase().equals("9"));
 
-        if (null != username && !volunteer) do {
+        if (null != username && volunteer) do {
 
+            System.out.println("Volunteer Welcome Screen // Imp. Volunteer UI Here");
 
+            /**
+             * implement volunteer UI code to run here
+             *
+             */
+
+            ci = "9";//infinite loop otherwise
 
 
 
