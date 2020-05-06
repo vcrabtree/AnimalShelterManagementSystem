@@ -47,4 +47,42 @@ class EmployeeCollectionTest {
         // Test Account That Does Not Exist
         assertThrows(AccountDoesNotExistException.class, () -> testCollection.checkCredentials("no", "password"));
     }
+
+    @Test
+    void addVolunteer() throws Exception{
+        EmployeeCollection mc = new EmployeeCollection();
+        assertEquals(0, mc.getVolunteerCount());
+        mc.addVolunteer("Amadou", "yes123");
+
+        assertEquals(1, mc.getVolunteerCount());
+        assertThrows(AccountAlreadyExistsException.class, ()-> mc.addVolunteer("Amadou", "yes123"));
+    }
+
+    @Test
+    void deleteVolunteerAcct() throws Exception {
+        EmployeeCollection mc = new EmployeeCollection();
+        mc.addVolunteer("Amadou", "yes123");
+        assertEquals(1, mc.getVolunteerCount());
+        mc.deleteVolunteerAcct("Amadou");
+        assertEquals(0, mc.getVolunteerCount());
+        assertThrows(IllegalArgumentException.class, ()-> mc.deleteVolunteerAcct("Amadou"));
+    }
+
+    @Test
+    public void Volunteer() throws AccountDoesNotExistException, Exception {
+        // Create AnimalShelter.Manager Account
+        EmployeeCollection testCollection = new EmployeeCollection();
+        testCollection.addVolunteer("AnimalShelter.Volunteer", "password");
+
+        // Incorrect Password for AnimalShelter.Manager Account
+        assertFalse(testCollection.checkVolCredentials("AnimalShelter.Volunteer", "")); // no password
+        assertFalse(testCollection.checkVolCredentials("AnimalShelter.Volunteer", "wrong")); // random password
+        assertFalse(testCollection.checkVolCredentials("AnimalShelter.Volunteer", "pasword")); // close to correct password
+
+        // Correct Password for AnimalShelter.Manager Account
+        assertTrue(testCollection.checkVolCredentials("AnimalShelter.Volunteer", "password"));
+
+        // Test Account That Does Not Exist
+        assertThrows(AccountDoesNotExistException.class, () -> testCollection.checkVolCredentials("no", "password"));
+    }
 }

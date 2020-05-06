@@ -16,7 +16,12 @@ public class ManagerLogin {
 
 
     public boolean confirmCredentials(String userid, String password) throws AccountDoesNotExistException {
-        return manager.checkCredentials(userid, password);
+        if(manager.checkCredentials(userid, password)){
+            return true;
+        }
+
+        else return manager.checkVolCredentials(userid, password);
+
     }
 
     public int checkStatus(int id, AnimalList listIn){
@@ -49,7 +54,9 @@ public class ManagerLogin {
             toDoList.add(taskIn);
         }
 
-
+    public EmployeeCollection getManager(){
+        return this.manager;
+    }
 
     }
 

@@ -1,3 +1,5 @@
+import AnimalShelter.Task;
+import AnimalShelter.TodoList;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;

@@ -1,3 +1,6 @@
+import AnimalShelter.Task;
+import AnimalShelter.TodoList;
+
 public class ToDoListUITest {
 
     public static void main(String[] args){
@@ -14,10 +17,10 @@ public class ToDoListUITest {
         todo.addTask(task4);
 
 
-        ToDoListAPI testAPI = todo;
-        ToDoListUI testUI = new ToDoListUI(testAPI);
+        //ToDoListAPI testAPI = todo;
+        //ToDoListUI testUI = new ToDoListUI(testAPI);
 
-        testUI.toDoListAccessed();
+        //testUI.toDoListAccessed();
 
 
     }

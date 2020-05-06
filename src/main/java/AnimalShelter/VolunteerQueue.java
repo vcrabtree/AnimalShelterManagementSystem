@@ -1,5 +1,4 @@
-import AnimalShelter.AccountAlreadyExistsException;
-import AnimalShelter.AccountDoesNotExistException;
+package AnimalShelter;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -15,7 +14,7 @@ public class VolunteerQueue {
         Volunteer newVol = new Volunteer(ID, password);
         for (Volunteer vol : queue) {
             if (vol.getId().equals(newVol.getId())) {
-                throw new AccountAlreadyExistsException("Volunteer Already Exists");
+                throw new AccountAlreadyExistsException("AnimalShelter.Volunteer Already Exists");
             }
         }
         queue.add(newVol);
