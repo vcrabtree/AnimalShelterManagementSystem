@@ -42,8 +42,9 @@ public class TodoList implements ToDoListAPI{
         for (Object taskToLookAt : toDoList) {
             Task t = (Task) taskToLookAt;
 
-            if (t.getTask().equals(taskToRemove)) {
+            if (t.getTask().compareTo(taskToRemove) == 0) {
                     toDoList.remove(t);
+                    this.taskCount -= 1;
             //throw exception task not int list
             }
         }

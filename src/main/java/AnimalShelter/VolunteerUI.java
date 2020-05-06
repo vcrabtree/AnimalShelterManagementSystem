@@ -9,9 +9,11 @@ public class VolunteerUI {
 
     private VolunteerAPI volunteerAPI;
     private Scanner read = new Scanner(System.in);
+    private AnimalList animalListIn;
 
-    public VolunteerUI(VolunteerAPI volunteerAPI){
+    public VolunteerUI(VolunteerAPI volunteerAPI, AnimalList animalListIn){
         this.volunteerAPI = volunteerAPI;
+        this.animalListIn = animalListIn;
     }
 
     public void volunteerAPIAccessed(){
@@ -19,6 +21,7 @@ public class VolunteerUI {
         String action;
         String task;
         int priority;
+        int id;
 
         do {
             System.out.println("Please enter an action or type 'help' for a list of commands");
@@ -36,8 +39,8 @@ public class VolunteerUI {
 
                     case "check animal status":
                         System.out.println("Enter animal ID to check");
-                        task = read.next();
-                        System.out.println(volunteerAPI.checkStatus(task, animalListIn));
+                        id = read.nextInt();
+                        System.out.println(volunteerAPI.checkStatus(id, animalListIn));
                         break;
 
                     case "check to do list":

@@ -49,7 +49,7 @@ public class TodoListTest {
 
         // Remove both tasks from To-Do List
         assertEquals(2, todo.taskCount);
-        todo.removeTask("Feed Dogs");
+        todo.removeTask("Feed dogs");
         assertEquals(1, todo.taskCount);
         todo.removeTask("Give Lucy a bath");
         assertEquals(0, todo.taskCount);

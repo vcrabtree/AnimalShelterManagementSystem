@@ -10,8 +10,5 @@
         <module name="Comp-345-Team" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Comp-345-Team" target="1.10" />
-    </bytecodeTargetLevel>
   </component>
 </project>
