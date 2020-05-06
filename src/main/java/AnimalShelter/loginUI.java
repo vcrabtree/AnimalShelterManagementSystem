@@ -32,7 +32,7 @@ public class loginUI {
 
 
         if (null != username && !volunteer) do {
-
+            System.out.println("MANAGER VIEW:");
             System.out.println("Select from the menu option:");
             System.out.println("1. Check animal status");
             System.out.println("2. Get animal needs");
