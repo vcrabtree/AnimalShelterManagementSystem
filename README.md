@@ -47,3 +47,5 @@ Sprint Two Retrospective Document: https://docs.google.com/document/d/1LsBeMtIhm
 
 ## Sprint Three
 Sprint Three Goal: Implementing a UI that integerates with all the functionalies already working
+
+UML Diagrams for Sprint Three: https://drive.google.com/file/d/1YOoSUtPpwyzRYqujrJ84NbuHG5vTBDLK/view?usp=sharing
