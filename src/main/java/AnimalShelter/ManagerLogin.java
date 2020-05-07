@@ -77,5 +77,16 @@ public class ManagerLogin {
 
     }
 
+    public void addTask(TodoList listIn, String taskIn, int pIn){
+        Task temp = new Task(pIn,taskIn);
+        listIn.addTask(temp);
+
+    }
+
+
+    public void viewToDo(TodoList listIn){
+        listIn.check();
+    }
+
     }
 

@@ -11,7 +11,7 @@ public interface ToDoListAPI {
 
     void addTask(Task taskIn);
 
-    void removeTask(String taskToRemove);
+    void removeTask(String taskToRemove) throws TaskException;
 
     void updateTask(String taskToUpdate, String newTaskName, int newPriority) throws IOException;
 
