@@ -34,16 +34,17 @@ public class loginUI {
         if (null != username && !volunteer) do {
             System.out.println("MANAGER VIEW:");
             System.out.println("Select from the menu option:");
-            System.out.println("1. Check animal status");
-            System.out.println("2. Get animal needs");
-            System.out.println("2a. Add animal needs");
-            System.out.println("3. Add animal records");
+            System.out.println("1. Check animal status"); //done
+            System.out.println("2. Get animal needs"); //done
+            System.out.println("2a. Add animal needs"); //done
+            System.out.println("3. Add animal records"); //done
             System.out.println("4. Remove animal needs");
-            System.out.println("5. Update animal records");
+            //System.out.println("5. Update animal records");
+            System.out.println("5. View Animal List"); //done
             System.out.println("6. Add task");
-            System.out.println("7. Add Animal");
-            System.out.println("8. Remove Animal");
-            System.out.println("9. Logout");
+            System.out.println("7. Add Animal"); //done
+            System.out.println("8. Remove Animal"); //done
+            System.out.println("9. Logout"); //done
             ci = input.next().toLowerCase();
             switch (ci) {
                 case "Check animal status":
@@ -137,15 +138,17 @@ public class loginUI {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case "Update animal records":
+                //case "Update animal records":
+                case "View Animal List":
                 case "5":
-                    System.out.println("Enter record name: ");
-                    String upRecName = input.next();
-                    try {
-                        Login.updateRecords(upRecName);
-                    } catch (IllegalArgumentException e) {
-                        System.out.println(e.getMessage());
-                    }
+                    Login.viewAnimalList(list1);
+//                    System.out.println("Enter record name: ");
+//                    String upRecName = input.next();
+//                    try {
+//                        Login.updateRecords(upRecName);
+//                    } catch (IllegalArgumentException e) {
+//                        System.out.println(e.getMessage());
+//                    }
                     break;
                 case "Add task":
                 case "6":
