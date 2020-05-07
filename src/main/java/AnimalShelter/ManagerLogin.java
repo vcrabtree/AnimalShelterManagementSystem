@@ -42,10 +42,11 @@ public class ManagerLogin {
         listIn.addNeeds(id,needIn);
             }
 
-    public void addRecords(String newRecord){
-        System.out.println("in progress, not yet implemented");
+    public void addRecords(int id, String recordIn, AnimalList listIn){
+        listIn.addRecords(id,recordIn);
 
     }
+
     public void removeNeeds(String needsToRemove) {
         for (int i = 0; i < needs.size(); i++) {
             if (needs.get(i).equals(needsToRemove)) {

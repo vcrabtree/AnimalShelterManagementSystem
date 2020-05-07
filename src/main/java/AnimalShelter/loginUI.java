@@ -116,10 +116,13 @@ public class loginUI {
 
                 case "Add animal records":
                 case "3":
-                    System.out.println("Enter new record name: ");
+                    System.out.println("Enter animal ID: ");
+                    int aID = input.nextInt();
+
+                    System.out.println("Enter record: ");
                     String recName = input.next();
                     try {
-                        Login.addRecords(recName);
+                        Login.addRecords(aID,recName,list1);
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }

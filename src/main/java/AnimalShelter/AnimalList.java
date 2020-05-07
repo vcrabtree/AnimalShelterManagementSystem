@@ -82,6 +82,28 @@ public class AnimalList {
 
     }
 
+    public void addRecords(int aID, String recordIn){
+        if (searchListA(aID) == null) {
+            throw new IllegalArgumentException("animal not in the system");
+        } else {
+            searchListA(aID).addRecords(recordIn);
+            System.out.println(searchListA(aID).getName() + ": Record updated");
+
+        }
+
+
+    }
+
+    public void getRecords(int ID){
+        int i = searchList(ID);
+        if(i != -1){
+            animalList.get(i).getRecords();
+        }
+        else{
+            throw new NullPointerException("Animal does not exist");}
+    }
+
+
 //    public String viewList(){
 //        String anList = "Name\t ID\n";
 //        Iterator<Animal> itr = animalList.iterator();
