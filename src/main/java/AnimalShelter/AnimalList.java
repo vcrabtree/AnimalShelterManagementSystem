@@ -2,6 +2,7 @@ package AnimalShelter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 public class AnimalList {
     int animalCount;
@@ -70,5 +71,18 @@ public class AnimalList {
 
 
     }
+
+//    public String viewList(){
+//        String anList = "Name\t ID\n";
+//        Iterator<Animal> itr = animalList.iterator();
+//
+//        while(itr.hasNext()){
+//            anList = anList + itr.next().getName() + "\t" + itr.next().getId() + "\n";
+//         }
+//
+//
+//        return anList;
+//
+//    }
 
 }
