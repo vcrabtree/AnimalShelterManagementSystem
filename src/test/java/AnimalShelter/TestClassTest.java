@@ -71,4 +71,14 @@ class TestClassTest {
 //
 //        System.out.println(al1.viewList());
 //    }
+
+    @Test
+    public void addNeedsTest(){
+        AnimalList a1 = new AnimalList();
+        a1.addAnimal(101,"Doodle", "Canine","Boarder Collie", "Black","3","male",15,1);
+        a1.addNeeds(101,"Need test input");
+        System.out.println(a1.getNeeds(101));
+
+
+    }
 }

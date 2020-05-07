@@ -36,6 +36,7 @@ public class loginUI {
             System.out.println("Select from the menu option:");
             System.out.println("1. Check animal status");
             System.out.println("2. Get animal needs");
+            System.out.println("2a. Add animal needs");
             System.out.println("3. Add animal records");
             System.out.println("4. Remove animal needs");
             System.out.println("5. Update animal records");
@@ -86,11 +87,33 @@ public class loginUI {
                         System.out.println("Enter animal id: ");
                         int aID = input.nextInt();
 
-                        System.out.println(Login.getNeeds(aID, animalCollect()));
+                        System.out.println(Login.getNeeds(aID, list1));
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
+                    } catch (NullPointerException e){
+                        System.out.println("Animal ID is not valid");
                     }
                     break;
+                case "Add animal needs":
+                case "2a":
+                    try {
+                        System.out.println("Enter animal id: ");
+                        int aID = input.nextInt();
+
+                        System.out.println("Enter animal need: ");
+                        String needIn = input.next();
+
+                        Login.addNeeds(aID,needIn,list1);
+
+
+
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                    } catch (NullPointerException e){
+                        System.out.println("Animal ID is not valid");
+                    }
+                    break;
+
                 case "Add animal records":
                 case "3":
                     System.out.println("Enter new record name: ");

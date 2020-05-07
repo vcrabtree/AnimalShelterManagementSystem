@@ -30,10 +30,18 @@ public class ManagerLogin {
         return animalToCheck.getStatus();
     }
     public String getNeeds(int id, AnimalList listIn){
-        Animal animalToCheck;
-        animalToCheck = listIn.searchListA(id);
-        return animalToCheck.getNeeds();
+//        Animal animalToCheck;
+//        animalToCheck = listIn.searchListA(id);
+
+        String needs;
+        needs = listIn.getNeeds(id);
+        return needs;
     }
+
+    public void addNeeds(int id, String needIn, AnimalList listIn){
+        listIn.addNeeds(id,needIn);
+            }
+
     public void addRecords(String newRecord){
         System.out.println("in progress, not yet implemented");
 
