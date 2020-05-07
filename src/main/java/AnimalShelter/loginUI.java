@@ -9,6 +9,8 @@ public class loginUI {
         String ci;
         ManagerLogin Login = ManagerData();
         AnimalList list1 = animalCollect();
+        TodoList tdList = currentTodo();
+        //TodoList tdList = new TodoList();
 
         System.out.println("Welcome to Fihve Animal Shelter, please enter user Name: ");
         ci = input.next();
@@ -41,7 +43,8 @@ public class loginUI {
             System.out.println("4. Remove animal needs");
             //System.out.println("5. Update animal records");
             System.out.println("5. View Animal List"); //done
-            System.out.println("6. Add task");
+            System.out.println("6. Add task");//done
+            System.out.println("6a. View To-Do List");//done
             System.out.println("7. Add Animal"); //done
             System.out.println("8. Remove Animal"); //done
             System.out.println("9. Logout"); //done
@@ -152,10 +155,27 @@ public class loginUI {
                     break;
                 case "Add task":
                 case "6":
-                    System.out.println("Not yet implemented: ");
+                    System.out.println("Enter Task Priority: ");
+                    int prior = input.nextInt();
+
+                    System.out.println("Enter Task: ");
+                    String task = input.next();
+
+                    Login.addTask(tdList,task,prior);
 
 
                     break;
+
+                case "View To-Do List":
+                case "6a":
+                    Login.viewToDo(tdList);
+
+
+                    break;
+
+
+
+
                 case "Add Animal":
                 case "7":
                     System.out.println("Enter animal ID number: ");
@@ -331,15 +351,14 @@ public class loginUI {
         //a1.addNeeds(1,"shower");
 
         return a1;
-
-
     }
 
     public static TodoList currentTodo() {
         TodoList todo1 = new TodoList();
-        Task t1 = new Task(1, "Clean Cages");
-        Task t2;
-        todo1.addTask(t1);
+        //Task t1 = new Task(1, "Clean Cages");
+        Task t2 = new Task(4,"Administer Medication");
+        //todo1.addTask(t1);
+        todo1.addTask(t2);
 
         return todo1;
 
