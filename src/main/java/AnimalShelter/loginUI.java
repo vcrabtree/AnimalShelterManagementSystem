@@ -53,9 +53,31 @@ public class loginUI {
                         /**
                          * Should print animal status- currently lists number
                          */
-                        System.out.println(Login.checkStatus(aID, animalCollect()));
+                        int stat = Login.checkStatus(aID, list1);
+
+                        if(stat == 1){
+                            System.out.println("Status 1: Intake");
+                        }
+
+                        if(stat == 2){
+                            System.out.println("Status 2: Staff ONLY");
+                        }
+
+                        if(stat == 3){
+                            System.out.println("Status 3: Ready for Adoption");
+                        }
+
+                        if(stat == 4){
+                            System.out.println("Status 4: Adopted");
+                        }
+
+
+
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
+                    }
+                    catch(NullPointerException e){
+                        System.out.println("Animal ID Not in the system, please enter valid ID");
                     }
                     break;
                 case "Get animal needs":
@@ -105,7 +127,32 @@ public class loginUI {
 
 
                     break;
+                case "Add Animal":
+                case "7":
+                    System.out.println("Enter animal ID number: ");
+                    int ID = input.nextInt();
+                    System.out.println("Enter animal name: ");
+                    String name = input.next();
+                    System.out.println("Enter species: ");
+                    String species = input.next();
+                    System.out.println("Enter breed: ");
+                    String breed = input.next();
+                    System.out.println("Enter color: ");
+                    String color = input.next();
+                    System.out.println("Enter age: ");
+                    String age = input.next();
+                    System.out.println("Enter sex: ");
+                    String sex = input.next();
+                    System.out.println("Enter weight: ");
+                    int weight = input.nextInt();
+                    System.out.println("Enter status (enter 1 for intake): 1 ");
+                    int status = input.nextInt();
 
+                    list1.addAnimal(ID,name,species,breed,color,age,sex,weight,status);
+
+                    System.out.println(name + " has been added to the Animal List. There are currently " + list1.animalCount +" animals in the shelter list");
+                    //System.out.println(list1.viewList());
+                    break;
             }
         } while (!ci.toLowerCase().equals("logout") && !ci.toLowerCase().equals("9"));
 
@@ -238,7 +285,7 @@ public class loginUI {
 
     public static AnimalList animalCollect() {
         AnimalList a1 = new AnimalList();
-        a1.addAnimal(1, "love", "puppy", "pup", "tan", "2", "Male", 8, 1);
+        a1.addAnimal(1, "love", "puppy", "pup", "tan", "2", "Male", 8, 3);
         //a1.addNeeds(1,"shower");
 
         return a1;
