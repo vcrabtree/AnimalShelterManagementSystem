@@ -67,5 +67,15 @@ public class ManagerLogin {
         return this.manager;
     }
 
+    public void removeAnimal(int aID, AnimalList animalListIn) throws EmptyListException {
+        animalListIn.removeAnimal(aID);
+
+    }
+
+    public void viewAnimalList(AnimalList animalListIn)  {
+        System.out.println(animalListIn.getList());
+
+    }
+
     }
 

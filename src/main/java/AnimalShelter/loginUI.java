@@ -177,7 +177,20 @@ public class loginUI {
                     list1.addAnimal(ID,name,species,breed,color,age,sex,weight,status);
 
                     System.out.println(name + " has been added to the Animal List. There are currently " + list1.animalCount +" animals in the shelter list");
-                    //System.out.println(list1.viewList());
+                    Login.viewAnimalList(list1);
+                    break;
+                case "Remove Animal":
+                case "8":
+                    System.out.println("Enter animal ID: ");
+                    int anID = input.nextInt();
+                    try {
+                        Login.removeAnimal(anID,list1);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                    }
+                     catch(EmptyListException e){
+                        System.out.println("Animal List is Empty");
+                     }
                     break;
             }
         } while (!ci.toLowerCase().equals("logout") && !ci.toLowerCase().equals("9"));

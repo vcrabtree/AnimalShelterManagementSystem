@@ -103,6 +103,14 @@ public class AnimalList {
             throw new NullPointerException("Animal does not exist");}
     }
 
+    public String getList() {
+        String stringAns = "Name \t ID\n";
+        for(int i=0; i < animalList.size(); i++) {
+            stringAns += animalList.get(i).getName() +"\t" + animalList.get(i).getId() + "\n";
+            //System.out.println(needs.get(i)+"\n");
+        }
+        return stringAns;
+    }
 
 //    public String viewList(){
 //        String anList = "Name\t ID\n";
