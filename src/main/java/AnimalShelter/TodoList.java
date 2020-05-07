@@ -25,9 +25,12 @@ public class TodoList implements ToDoListAPI{
             System.out.println(tasks);
         }
         else{
+            int i = 1;
+            System.out.println("Item\t  Priority\t  Done\n");
             for(Task t : toDoList) {
                 tasks = tasks + t.getTask() + "\n";
-                System.out.println(t.getTask());
+                System.out.println(i + "\t" + t.getTask() + "\t" + t.getPriority() + "\t" + t.getDone());
+                i++;
             }
 
         }
@@ -38,14 +41,14 @@ public class TodoList implements ToDoListAPI{
         toDoList.add(taskIn);
     }
 
-    public void removeTask(String taskToRemove) {
+    public void removeTask(String taskToRemove) throws TaskException {
         for (Object taskToLookAt : toDoList) {
             Task t = (Task) taskToLookAt;
 
             if (t.getTask().compareTo(taskToRemove) == 0) {
                     toDoList.remove(t);
                     this.taskCount -= 1;
-            //throw exception task not int list
+            throw new TaskException("Task does not exist");
             }
         }
     }

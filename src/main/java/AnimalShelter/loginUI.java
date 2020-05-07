@@ -9,6 +9,8 @@ public class loginUI {
         String ci;
         ManagerLogin Login = ManagerData();
         AnimalList list1 = animalCollect();
+        TodoList tdList = currentTodo();
+        //TodoList tdList = new TodoList();
 
         System.out.println("Welcome to Fihve Animal Shelter, please enter user Name: ");
         ci = input.next();
@@ -34,16 +36,18 @@ public class loginUI {
         if (null != username && !volunteer) do {
             System.out.println("MANAGER VIEW:");
             System.out.println("Select from the menu option:");
-            System.out.println("1. Check animal status");
-            System.out.println("2. Get animal needs");
-            System.out.println("2a. Add animal needs");
-            System.out.println("3. Add animal records");
+            System.out.println("1. Check animal status"); //done
+            System.out.println("2. Get animal needs"); //done
+            System.out.println("2a. Add animal needs"); //done
+            System.out.println("3. Add animal records"); //done
             System.out.println("4. Remove animal needs");
-            System.out.println("5. Update animal records");
-            System.out.println("6. Add task");
-            System.out.println("7. Add Animal");
-            System.out.println("8. Remove Animal");
-            System.out.println("9. Logout");
+            //System.out.println("5. Update animal records");
+            System.out.println("5. View Animal List"); //done
+            System.out.println("6. Add task");//done
+            System.out.println("6a. View To-Do List");//done
+            System.out.println("7. Add Animal"); //done
+            System.out.println("8. Remove Animal"); //done
+            System.out.println("9. Logout"); //done
             ci = input.next().toLowerCase();
             switch (ci) {
                 case "Check animal status":
@@ -137,22 +141,41 @@ public class loginUI {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case "Update animal records":
+                //case "Update animal records":
+                case "View Animal List":
                 case "5":
-                    System.out.println("Enter record name: ");
-                    String upRecName = input.next();
-                    try {
-                        Login.updateRecords(upRecName);
-                    } catch (IllegalArgumentException e) {
-                        System.out.println(e.getMessage());
-                    }
+                    Login.viewAnimalList(list1);
+//                    System.out.println("Enter record name: ");
+//                    String upRecName = input.next();
+//                    try {
+//                        Login.updateRecords(upRecName);
+//                    } catch (IllegalArgumentException e) {
+//                        System.out.println(e.getMessage());
+//                    }
                     break;
                 case "Add task":
                 case "6":
-                    System.out.println("Not yet implemented: ");
+                    System.out.println("Enter Task Priority: ");
+                    int prior = input.nextInt();
+
+                    System.out.println("Enter Task: ");
+                    String task = input.next();
+
+                    Login.addTask(tdList,task,prior);
 
 
                     break;
+
+                case "View To-Do List":
+                case "6a":
+                    Login.viewToDo(tdList);
+
+
+                    break;
+
+
+
+
                 case "Add Animal":
                 case "7":
                     System.out.println("Enter animal ID number: ");
@@ -328,15 +351,14 @@ public class loginUI {
         //a1.addNeeds(1,"shower");
 
         return a1;
-
-
     }
 
     public static TodoList currentTodo() {
         TodoList todo1 = new TodoList();
-        Task t1 = new Task(1, "Clean Cages");
-        Task t2;
-        todo1.addTask(t1);
+        //Task t1 = new Task(1, "Clean Cages");
+        Task t2 = new Task(4,"Administer Medication");
+        //todo1.addTask(t1);
+        todo1.addTask(t2);
 
         return todo1;
 
