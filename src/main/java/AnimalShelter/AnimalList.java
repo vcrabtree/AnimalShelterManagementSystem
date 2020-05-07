@@ -59,17 +59,57 @@ public class AnimalList {
         return null;}
     }
 
+    public String getNeeds(int ID){
+        int i = searchList(ID);
+        if(i != -1){
+            return animalList.get(i).getNeeds();
+        }
+        else{
+            return null;}
+    }
+
     //Testing get needs for UI
 
     public void addNeeds(int aID, String newNeeds) {
-        if (animalList.get(aID) == null) {
+        if (searchListA(aID) == null) {
             throw new IllegalArgumentException("animal not in the system");
         } else {
-            System.out.println("in progress, not yet implemented");
+            searchListA(aID).needs.add(newNeeds);
+            System.out.println("Need: " + newNeeds + " Added to: " + searchListA(aID).getName());
 
         }
 
 
+    }
+
+    public void addRecords(int aID, String recordIn){
+        if (searchListA(aID) == null) {
+            throw new IllegalArgumentException("animal not in the system");
+        } else {
+            searchListA(aID).addRecords(recordIn);
+            System.out.println(searchListA(aID).getName() + ": Record updated");
+
+        }
+
+
+    }
+
+    public void getRecords(int ID){
+        int i = searchList(ID);
+        if(i != -1){
+            animalList.get(i).getRecords();
+        }
+        else{
+            throw new NullPointerException("Animal does not exist");}
+    }
+
+    public String getList() {
+        String stringAns = "Name \t ID\n";
+        for(int i=0; i < animalList.size(); i++) {
+            stringAns += animalList.get(i).getName() +"\t" + animalList.get(i).getId() + "\n";
+            //System.out.println(needs.get(i)+"\n");
+        }
+        return stringAns;
     }
 
 //    public String viewList(){

@@ -71,4 +71,37 @@ class TestClassTest {
 //
 //        System.out.println(al1.viewList());
 //    }
+
+    @Test
+    public void addNeedsTest(){
+        AnimalList a1 = new AnimalList();
+        a1.addAnimal(101,"Doodle", "Canine","Boarder Collie", "Black","3","male",15,1);
+        a1.addNeeds(101,"Need test input");
+        System.out.println(a1.getNeeds(101));
+
+
+    }
+
+    @Test
+    public void addRecordsTest(){
+        AnimalList a1 = new AnimalList();
+        a1.addAnimal(101,"Doodle", "Canine","Boarder Collie", "Black","3","male",15,1);
+        a1.addAnimal(21,"Dara","Dog","Collie","Black", "2","F",12,1);
+        a1.addAnimal(102,"Spike", "Pantherophis guttatus","Corn Snake", "Orange","3","male",2,1);
+        a1.addRecords(101,"record test");
+        a1.addRecords(101, "went to the vet");
+        a1.getRecords(101);  //getRecords
+
+
+    }
+
+    @Test
+    public void viewAnimalList(){
+        AnimalList a1 = new AnimalList();
+        a1.addAnimal(101,"Doodle", "Canine","Boarder Collie", "Black","3","male",15,1);
+        a1.addAnimal(21,"Dara","Dog","Collie","Black", "2","F",12,1);
+        a1.addAnimal(102,"Spike", "Pantherophis guttatus","Corn Snake", "Orange","3","male",2,1);
+        System.out.print(a1.getList());
+
+    }
 }

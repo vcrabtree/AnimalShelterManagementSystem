@@ -30,14 +30,23 @@ public class ManagerLogin {
         return animalToCheck.getStatus();
     }
     public String getNeeds(int id, AnimalList listIn){
-        Animal animalToCheck;
-        animalToCheck = listIn.searchListA(id);
-        return animalToCheck.getNeeds();
+//        Animal animalToCheck;
+//        animalToCheck = listIn.searchListA(id);
+
+        String needs;
+        needs = listIn.getNeeds(id);
+        return needs;
     }
-    public void addRecords(String newRecord){
-        System.out.println("in progress, not yet implemented");
+
+    public void addNeeds(int id, String needIn, AnimalList listIn){
+        listIn.addNeeds(id,needIn);
+            }
+
+    public void addRecords(int id, String recordIn, AnimalList listIn){
+        listIn.addRecords(id,recordIn);
 
     }
+
     public void removeNeeds(String needsToRemove) {
         for (int i = 0; i < needs.size(); i++) {
             if (needs.get(i).equals(needsToRemove)) {
@@ -56,6 +65,16 @@ public class ManagerLogin {
 
     public EmployeeCollection getManager(){
         return this.manager;
+    }
+
+    public void removeAnimal(int aID, AnimalList animalListIn) throws EmptyListException {
+        animalListIn.removeAnimal(aID);
+
+    }
+
+    public void viewAnimalList(AnimalList animalListIn)  {
+        System.out.println(animalListIn.getList());
+
     }
 
     }
