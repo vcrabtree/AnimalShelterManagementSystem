@@ -83,6 +83,10 @@ public class ManagerLogin {
 
     }
 
+    public void updateTask(TodoList listIn, String taskToUpdate, String newTaskName, int newPriority) {
+        listIn.updateTask(taskToUpdate, newTaskName, newPriority);
+    }
+
 
     public void viewToDo(TodoList listIn){
         listIn.check();
