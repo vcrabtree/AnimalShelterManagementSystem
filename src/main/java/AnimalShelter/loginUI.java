@@ -9,10 +9,10 @@ public class loginUI {
         String ci;
         ManagerLogin Login = ManagerData();
         AnimalList list1 = animalCollect();
-        TodoList tdList = currentTodo();
-        //TodoList tdList = new TodoList();
+        //TodoList tdList = currentTodo();
+        TodoList tdList = new TodoList();
 
-        System.out.println("Welcome to Fihve Animal Shelter, please enter user Name: ");
+        System.out.println("Welcome to Five Animal Shelter, please enter user Name: ");
         ci = input.next();
 
         if (!ci.toLowerCase().equals("quit")) {
@@ -44,7 +44,8 @@ public class loginUI {
             //System.out.println("5. Update animal records");
             System.out.println("5. View Animal List"); //done
             System.out.println("6. Add task");//done
-            System.out.println("6a. View To-Do List");//done
+            System.out.println("6a. Update task");
+            System.out.println("6b. View To-Do List");//done
             System.out.println("7. Add Animal"); //done
             System.out.println("8. Remove Animal"); //done
             System.out.println("9. Logout"); //done
@@ -155,19 +156,33 @@ public class loginUI {
                     break;
                 case "Add task":
                 case "6":
-                    System.out.println("Enter Task Priority: ");
-                    int prior = input.nextInt();
-
                     System.out.println("Enter Task: ");
                     String task = input.next();
+
+                    System.out.println("Enter Task Priority: ");
+                    int prior = input.nextInt();
 
                     Login.addTask(tdList,task,prior);
 
 
                     break;
+                case "Update task":
+                case "6a":
+                    System.out.println("Enter task to update: ");
+                    String taskToUpdate = input.next();
+
+                    System.out.println("Enter the updated task: ");
+                    String taskUpdated = input.next();
+
+                    System.out.println("Enter the updated priority: ");
+                    int newPriority = input.nextInt();
+
+                    Login.updateTask(tdList, taskToUpdate, taskUpdated, newPriority);
+                    System.out.println("Task updated");
+                    break;
 
                 case "View To-Do List":
-                case "6a":
+                case "6b":
                     Login.viewToDo(tdList);
 
 
