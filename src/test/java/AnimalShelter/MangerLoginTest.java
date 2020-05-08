@@ -7,7 +7,7 @@ public class MangerLoginTest {
 
     @Test
 
-    public void addneedsTest(){
+    public void addneedsTest() throws AnimalNotFound {
     AnimalList a1 = new AnimalList();
     a1.addAnimal(3,"bb","dog", "collie", "red", "4", "m",44,4);
     EmployeeCollection ec = new EmployeeCollection();

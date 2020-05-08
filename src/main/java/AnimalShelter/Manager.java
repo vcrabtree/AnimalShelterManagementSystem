@@ -18,13 +18,13 @@ public class Manager {
         return password;
     }
 
-    public void updateAnimalRecords(int id, AnimalList listIn, String input){
+    public void updateAnimalRecords(int id, AnimalList listIn, String input) throws AnimalNotFound {
         Animal animalToUpdate;
         animalToUpdate = listIn.searchListA(id);
         animalToUpdate.addRecords(input);
     }
 
-    public String getRecords(int id, AnimalList listIn){
+    public String getRecords(int id, AnimalList listIn) throws AnimalNotFound {
         Animal recsToGet;
         recsToGet = listIn.searchListA(id);
         String recs = "";
@@ -39,7 +39,7 @@ public class Manager {
         }
     }
 
-    public void updateAnimalStatus(int id, AnimalList listIn, int input){
+    public void updateAnimalStatus(int id, AnimalList listIn, int input) throws AnimalNotFound {
         Animal animalToUpdate;
         animalToUpdate = listIn.searchListA(id);
         System.out.println("Please enter...\n1: Available for adoption \n2: Unavailable for adoption \n3: Status 3 \n4: Status 4");
@@ -51,7 +51,7 @@ public class Manager {
         }
     }
 
-    public String checkStatus(int id, AnimalList listIn) {
+    public String checkStatus(int id, AnimalList listIn) throws AnimalNotFound {
         Animal animalToCheck;
         animalToCheck = listIn.searchListA(id);
         String status;
@@ -73,13 +73,13 @@ public class Manager {
         }
     }
 
-    public void updateAnimalNeeds(int id, AnimalList listIn, String needs){
+    public void updateAnimalNeeds(int id, AnimalList listIn, String needs) throws AnimalNotFound {
         Animal animalToCheck;
         animalToCheck = listIn.searchListA((id));
         animalToCheck.addNeeds(needs);
     }
 
-    public String checkNeeds(int id, AnimalList listIn){
+    public String checkNeeds(int id, AnimalList listIn) throws AnimalNotFound {
         Animal animalToCheck;
         animalToCheck = listIn.searchListA(id);
         return animalToCheck.getNeeds();

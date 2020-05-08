@@ -29,7 +29,7 @@ public class Volunteer {
         password = newPassword;
     }
 
-    public String checkStatus(int id, AnimalList listIn) {
+    public String checkStatus(int id, AnimalList listIn) throws AnimalNotFound {
         Animal animalToCheck;
         animalToCheck = listIn.searchListA(id);
         String status;

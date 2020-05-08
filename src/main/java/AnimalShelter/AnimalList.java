@@ -25,12 +25,12 @@ public class AnimalList {
 
     public int getCount(){return animalCount;}
 
-    public void removeAnimal(int ID) throws EmptyListException {
+    public void removeAnimal(int ID) throws EmptyListException, AnimalNotFound {
         if(animalCount<= 0){
             throw new EmptyListException("No animals in list");
         }
         else if(searchList(ID) == -1){
-            throw new IllegalArgumentException("No animal by that name");
+             throw new AnimalNotFound("**Animal ID is invalid, this animal is not in the system**");
         }
         else{
             animalCount -= 1;
@@ -50,38 +50,39 @@ public class AnimalList {
         return -1;
     }
 
-    public Animal searchListA(int ID){
+    public Animal searchListA(int ID) throws AnimalNotFound {
         int i = searchList(ID);
         if(i != -1){
             return animalList.get(i);
         }
         else{
-        return null;}
+            throw new AnimalNotFound("**Animal ID is invalid, this animal is not in the system**");}
     }
 
-    public String getNeeds(int ID){
+    public String getNeeds(int ID) throws AnimalNotFound {
         int i = searchList(ID);
         if(i != -1){
             return animalList.get(i).getNeeds();
         }
         else{
-            return null;}
+            throw new AnimalNotFound("**Animal ID is invalid, this animal is not in the system**");
+        }
     }
 
-    public void removeNeeds(int ID, String needRem) throws NeedNotFoundException {
+    public void removeNeeds(int ID, String needRem) throws NeedNotFoundException, AnimalNotFound {
         int i = searchList(ID);
         if(i != -1){
             animalList.get(i).removeNeeds(needRem);
         }
         else{
-            throw new NeedNotFoundException("Need Not Found");}
+            throw new AnimalNotFound("**Animal ID is invalid, this animal is not in the system**");} //animal not found
     }
 
     //Testing get needs for UI
 
-    public void addNeeds(int aID, String newNeeds) {
+    public void addNeeds(int aID, String newNeeds) throws AnimalNotFound {
         if (searchListA(aID) == null) {
-            throw new IllegalArgumentException("animal not in the system");
+            throw new AnimalNotFound("**Animal ID is invalid, this animal is not in the system**");
         } else {
             searchListA(aID).needs.add(newNeeds);
             System.out.println("Need: " + newNeeds + " Added to: " + searchListA(aID).getName());
@@ -91,9 +92,9 @@ public class AnimalList {
 
     }
 
-    public void addRecords(int aID, String recordIn){
+    public void addRecords(int aID, String recordIn) throws AnimalNotFound {
         if (searchListA(aID) == null) {
-            throw new IllegalArgumentException("animal not in the system");
+            throw new AnimalNotFound("**Animal ID is invalid, this animal is not in the system**");
         } else {
             searchListA(aID).addRecords(recordIn);
             System.out.println(searchListA(aID).getName() + ": Record updated");
@@ -103,14 +104,14 @@ public class AnimalList {
 
     }
 
-    public void getRecords(int ID){
+    public void getRecords(int ID) throws AnimalNotFound {
         int i = searchList(ID);
         if(i != -1){
             animalList.get(i).getRecords();
         }
         else{
-            throw new NullPointerException("Animal does not exist");}
-    }
+            throw new AnimalNotFound("**Animal ID is invalid, this animal is not in the system**");
+    }}
 
     public String getList() {
         String stringAns = "Name \t ID\n";

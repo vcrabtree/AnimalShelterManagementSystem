@@ -36,7 +36,7 @@ public class AnimalClassTest {
     }
 
     @Test
-    public void removeNeedsTest() {
+    public void removeNeedsTest() throws NeedNotFoundException {
         Animal a1 = new Animal(1234, "name1", "dog", "N/A", "tan", "puppy", "male", 10, 0);
 
         assertEquals(0, a1.needs.size());

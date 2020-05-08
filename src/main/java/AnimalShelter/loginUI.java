@@ -85,6 +85,11 @@ public class loginUI {
                     catch(NullPointerException e){
                         System.out.println("Animal ID Not in the system, please enter valid ID");
                     }
+                    catch(AnimalNotFound e){
+                        System.out.println("**Animal ID is invalid, this animal is not in the system**");
+                        System.out.println("Shelter Animals: ");
+                        Login.viewAnimalList(list1);
+                    }
                     break;
                 case "Get animal needs":
                 case "2":
@@ -97,6 +102,11 @@ public class loginUI {
                         System.out.println(e.getMessage());
                     } catch (NullPointerException e){
                         System.out.println("Animal ID is not valid");
+                    }
+                    catch(AnimalNotFound e){
+                        System.out.println("**Animal ID is invalid, this animal is not in the system**");
+                        System.out.println("Shelter Animals: ");
+                        Login.viewAnimalList(list1);
                     }
                     break;
                 case "Add animal needs":
@@ -117,7 +127,13 @@ public class loginUI {
                     } catch (NullPointerException e){
                         System.out.println("Animal ID is not valid");
                     }
+                    catch(AnimalNotFound e){
+                        System.out.println("**Animal ID is invalid, this animal is not in the system**");
+                        System.out.println("Shelter Animals: ");
+                        Login.viewAnimalList(list1);
+                    }
                     break;
+
 
                 case "Add animal records":
                 case "3":
@@ -130,6 +146,11 @@ public class loginUI {
                         Login.addRecords(aID,recName,list1);
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
+                    }
+                    catch(AnimalNotFound e){
+                        System.out.println("**Animal ID is invalid, this animal is not in the system**");
+                        System.out.println("Shelter Animals: ");
+                        Login.viewAnimalList(list1);
                     }
                     break;
                 case "Remove animal needs":
@@ -144,6 +165,11 @@ public class loginUI {
                         System.out.println(e.getMessage());
                     } catch (NeedNotFoundException e){
                         System.out.println("Need Not Found");
+                    }
+                    catch(AnimalNotFound e){
+                        System.out.println("**Animal ID is invalid, this animal is not in the system**");
+                        System.out.println("Shelter Animals: ");
+                        Login.viewAnimalList(list1);
                     }
                     break;
                 //case "Update animal records":
@@ -233,6 +259,11 @@ public class loginUI {
                      catch(EmptyListException e){
                         System.out.println("Animal List is Empty");
                      }
+                    catch(AnimalNotFound e){
+                        System.out.println("**Animal ID is invalid, this animal is not in the system**");
+                        System.out.println("Shelter Animals: ");
+                        Login.viewAnimalList(list1);
+                    }
                     break;
             }
         } while (!ci.toLowerCase().equals("logout") && !ci.toLowerCase().equals("9"));

@@ -27,7 +27,7 @@ class TestClassTest {
     }
 
     @Test
-    public void AnimalDSTests() throws EmptyListException {
+    public void AnimalDSTests() throws EmptyListException, AnimalNotFound {
         //Constructor Test
         AnimalList al1 = new AnimalList();
         assertEquals(0,al1.getCount());
@@ -54,7 +54,7 @@ class TestClassTest {
     }
 
     @Test
-    public void AnimalSearchTest(){
+    public void AnimalSearchTest() throws AnimalNotFound {
         AnimalList a1 = new AnimalList();
         a1.addAnimal(101,"Doodle", "Canine","Boarder Collie", "Black","3","male",15,1);
         Animal animal = a1.animalList.get(0);
@@ -73,7 +73,7 @@ class TestClassTest {
 //    }
 
     @Test
-    public void addNeedsTest(){
+    public void addNeedsTest() throws AnimalNotFound {
         AnimalList a1 = new AnimalList();
         a1.addAnimal(101,"Doodle", "Canine","Boarder Collie", "Black","3","male",15,1);
         a1.addNeeds(101,"Need test input");
@@ -83,7 +83,7 @@ class TestClassTest {
     }
 
     @Test
-    public void addRecordsTest(){
+    public void addRecordsTest() throws AnimalNotFound {
         AnimalList a1 = new AnimalList();
         a1.addAnimal(101,"Doodle", "Canine","Boarder Collie", "Black","3","male",15,1);
         a1.addAnimal(21,"Dara","Dog","Collie","Black", "2","F",12,1);

@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ManagerClassTest {
     @Test
-    public void checkNeedsTest(){
+    public void checkNeedsTest() throws AnimalNotFound {
         Manager mg1 = new Manager("1", "password");
         AnimalList al1 = new AnimalList();
         al1.addAnimal(01,"Alex", "dog", "n/a", "black", "10","female",30,2);
@@ -16,7 +16,7 @@ public class ManagerClassTest {
     }
 
     @Test
-    public void updateNeedsTest(){
+    public void updateNeedsTest() throws AnimalNotFound {
         Manager mg1 = new Manager("1", "password");
         AnimalList al1 = new AnimalList();
         al1.addAnimal(01,"Alex", "dog", "n/a", "black", "10","female",30,2);
@@ -27,7 +27,7 @@ public class ManagerClassTest {
     }
 
     @Test
-    public void updateRecordsTest(){
+    public void updateRecordsTest() throws AnimalNotFound {
         Manager mg1 = new Manager("1","password");
         AnimalList al1 = new AnimalList();
         al1.addAnimal(123,"Oscar","dog","n/a","brown","4","Male",25,1);
@@ -37,7 +37,7 @@ public class ManagerClassTest {
     }
 
     @Test
-    public void getRecordsTest(){
+    public void getRecordsTest() throws AnimalNotFound {
         Manager mg1 = new Manager("1", "password");
         AnimalList al1 = new AnimalList();
         al1.addAnimal(01,"Alex", "dog", "n/a", "black", "10","female",30,2);
@@ -48,7 +48,7 @@ public class ManagerClassTest {
     }
 
     @Test
-    public void updateStatusTest(){
+    public void updateStatusTest() throws AnimalNotFound {
         Manager manager1 = new Manager("1", "password");
         AnimalList al1 = new AnimalList();
         al1.addAnimal(1,"Max","Dog","Shiba Inu","Tan","Puppy", "Male",12,1);
@@ -65,7 +65,7 @@ public class ManagerClassTest {
     }
 
     @Test
-    public void checkStatusTest(){
+    public void checkStatusTest() throws AnimalNotFound {
         Manager manager1 = new Manager("1","password");
         AnimalList al1 = new AnimalList();
         al1.addAnimal(1,"Max","Dog","Shiba Inu","Tan","Puppy", "Male",12,1);
