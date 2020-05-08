@@ -68,6 +68,15 @@ public class AnimalList {
             return null;}
     }
 
+    public void removeNeeds(int ID, String needRem) throws NeedNotFoundException {
+        int i = searchList(ID);
+        if(i != -1){
+            animalList.get(i).removeNeeds(needRem);
+        }
+        else{
+            throw new NeedNotFoundException("Need Not Found");}
+    }
+
     //Testing get needs for UI
 
     public void addNeeds(int aID, String newNeeds) {

@@ -72,6 +72,10 @@ public class ManagerLogin {
 
     }
 
+    public void removeNeeds(int aID, AnimalList animalListIn, String need) throws NeedNotFoundException {
+        animalListIn.removeNeeds(aID,need);
+    }
+
     public void viewAnimalList(AnimalList animalListIn)  {
         System.out.println(animalListIn.getList());
 

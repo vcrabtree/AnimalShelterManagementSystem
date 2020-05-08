@@ -134,12 +134,16 @@ public class loginUI {
                     break;
                 case "Remove animal needs":
                 case "4":
+                    System.out.println("Enter animalID: ");
+                    int IDin= input.nextInt();
                     System.out.println("Enter needs to remove: ");
                     String remvNeed = input.next();
                     try {
-                        Login.removeNeeds(remvNeed);
+                        Login.removeNeeds(IDin,list1,remvNeed);
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
+                    } catch (NeedNotFoundException e){
+                        System.out.println("Need Not Found");
                     }
                     break;
                 //case "Update animal records":
