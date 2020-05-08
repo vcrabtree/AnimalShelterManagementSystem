@@ -1,5 +1,6 @@
 package AnimalShelter;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class loginUI {
@@ -26,6 +27,8 @@ public class loginUI {
                 else System.out.println("try again.");
             } catch (IllegalArgumentException e) {
                 System.out.println("Invalid User Name: " + ci);
+            } catch (AccountDoesNotExistException e){
+                System.out.println("This manager account does not exist -- Access Denied");
             }
         }
 
@@ -90,6 +93,9 @@ public class loginUI {
                         System.out.println("Shelter Animals: ");
                         Login.viewAnimalList(list1);
                     }
+                    catch(InputMismatchException e){
+                        System.out.println("Input Invalid - animal ID must be an integer");
+                    }
                     break;
                 case "Get animal needs":
                 case "2":
@@ -102,6 +108,8 @@ public class loginUI {
                         System.out.println(e.getMessage());
                     } catch (NullPointerException e){
                         System.out.println("Animal ID is not valid");
+                    }catch(InputMismatchException e){
+                        System.out.println("Input Invalid - animal ID must be an integer");
                     }
                     catch(AnimalNotFound e){
                         System.out.println("**Animal ID is invalid, this animal is not in the system**");
@@ -132,17 +140,21 @@ public class loginUI {
                         System.out.println("Shelter Animals: ");
                         Login.viewAnimalList(list1);
                     }
+                    catch(InputMismatchException e){
+                        System.out.println("Input Invalid - animal ID must be an integer");
+                    }
                     break;
 
 
                 case "Add animal records":
                 case "3":
+                    try {
                     System.out.println("Enter animal ID: ");
                     int aID = input.nextInt();
 
                     System.out.println("Enter record: ");
                     String recName = input.next();
-                    try {
+
                         Login.addRecords(aID,recName,list1);
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
@@ -151,6 +163,9 @@ public class loginUI {
                         System.out.println("**Animal ID is invalid, this animal is not in the system**");
                         System.out.println("Shelter Animals: ");
                         Login.viewAnimalList(list1);
+                    }
+                    catch(InputMismatchException e){
+                        System.out.println("Input Invalid - animal ID must be an integer");
                     }
                     break;
                 case "Remove animal needs":
@@ -166,11 +181,17 @@ public class loginUI {
                     } catch (NeedNotFoundException e){
                         System.out.println("Need Not Found");
                     }
+                    catch(InputMismatchException e){
+                        System.out.println("Input Invalid - animal ID must be an integer");
+                    }
                     catch(AnimalNotFound e){
                         System.out.println("**Animal ID is invalid, this animal is not in the system**");
                         System.out.println("Shelter Animals: ");
                         Login.viewAnimalList(list1);
                     }
+//                    catch(InputMismatchException e){
+//                        System.out.println("Input Invalid - animal ID must be an integer");
+//                    }
                     break;
                 //case "Update animal records":
                 case "View Animal List":
@@ -186,18 +207,23 @@ public class loginUI {
                     break;
                 case "Add task":
                 case "6":
-                    System.out.println("Enter Task: ");
-                    String task = input.next();
+                    try {
+                        System.out.println("Enter Task: ");
+                        String task = input.next();
 
-                    System.out.println("Enter Task Priority: ");
-                    int prior = input.nextInt();
+                        System.out.println("Enter Task Priority: ");
+                        int prior = input.nextInt();
 
-                    Login.addTask(tdList,task,prior);
-
-
+                        Login.addTask(tdList, task, prior);
+                    }
+                    catch(InputMismatchException e){
+                        System.out.println("Input Invalid - Task Priority must be an integer");
+                    }
+                    //catch invalid entry exception
                     break;
                 case "Update task":
                 case "6a":
+                    try{
                     System.out.println("Enter task to update: ");
                     String taskToUpdate = input.next();
 
@@ -208,7 +234,10 @@ public class loginUI {
                     int newPriority = input.nextInt();
 
                     Login.updateTask(tdList, taskToUpdate, taskUpdated, newPriority);
-                    System.out.println("Task updated");
+                    System.out.println("Task updated");}
+                    catch(InputMismatchException e){
+                        System.out.println("Input Invalid - Task Priority must be an integer");
+                    }
                     break;
 
                 case "View To-Do List":
@@ -223,6 +252,7 @@ public class loginUI {
 
                 case "Add Animal":
                 case "7":
+                    try{
                     System.out.println("Enter animal ID number: ");
                     int ID = input.nextInt();
                     System.out.println("Enter animal name: ");
@@ -245,7 +275,10 @@ public class loginUI {
                     list1.addAnimal(ID,name,species,breed,color,age,sex,weight,status);
 
                     System.out.println(name + " has been added to the Animal List. There are currently " + list1.animalCount +" animals in the shelter list");
-                    Login.viewAnimalList(list1);
+                    Login.viewAnimalList(list1);}
+                    catch(InputMismatchException e){
+                        System.out.println("Input Invalid - Animal ID, Weight, Status, must be integer");
+                    }
                     break;
                 case "Remove Animal":
                 case "8":
@@ -263,6 +296,9 @@ public class loginUI {
                         System.out.println("**Animal ID is invalid, this animal is not in the system**");
                         System.out.println("Shelter Animals: ");
                         Login.viewAnimalList(list1);
+                    }
+                    catch(InputMismatchException e){
+                        System.out.println("Input Invalid - Animal ID must be an integer");
                     }
                     break;
             }
