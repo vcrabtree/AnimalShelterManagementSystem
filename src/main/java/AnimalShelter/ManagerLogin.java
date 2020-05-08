@@ -83,8 +83,10 @@ public class ManagerLogin {
 
     }
 
-    public void updateTask(TodoList listIn, String taskToUpdate, String newTaskName, int newPriority) {
-        listIn.updateTask(taskToUpdate, newTaskName, newPriority);
+    public void updateTask(TodoList listIn, String taskToUpdate, String newTaskName, int newPriority) throws TaskException {
+        Task temp;
+        temp = listIn.updateTask(taskToUpdate, newTaskName, newPriority);
+        listIn.addTask(temp);
     }
 
 

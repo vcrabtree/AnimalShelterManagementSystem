@@ -1,8 +1,6 @@
 package AnimalShelter;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.io.IOException;
 import java.util.*;
 
 public class TodoList implements ToDoListAPI{
@@ -64,18 +62,29 @@ public class TodoList implements ToDoListAPI{
         }
     }
 
-    public void updateTask(String taskToUpdate, String newTaskName, int newPriority) {
-
+    public Task updateTask(String taskToUpdate, String newTaskName, int newPriority) throws TaskException {
+        boolean taskInList = false;
         Iterator itr = toDoList.iterator();
 
         while(itr.hasNext()){
             Object o = itr.next();
             Task t = (Task) o;
             if (t.getTask().equals(taskToUpdate)) {
-                t.setTask(newTaskName);
-                t.setPriority(newPriority);
+                taskInList = true;
+                toDoList.remove(t);
+
+                Task newTask = new Task (newPriority,newTaskName);
+                //t.setTask(newTaskName);
+                //t.setPriority(newPriority);
+                //toDoList.add(newTask);
+                return newTask;
             }
         }
+
+        if(!taskInList){
+            throw new TaskException("Task is not in To-Do list");
+        }
+        return null;
     }
 
 
