@@ -103,6 +103,10 @@ public class Animal {
             stringNeeds += needs.get(i) + "\n";
             //System.out.println(needs.get(i)+"\n");
         }
+
+        if(needs.size() <= 0){
+            stringNeeds = "Needs list is empty";
+        }
         return stringNeeds;
     }
 
@@ -110,11 +114,16 @@ public class Animal {
         needs.add(newNeeds);
     }
 
-    public void removeNeeds(String needsToRemove) {
+    public void removeNeeds(String needsToRemove) throws NeedNotFoundException {
+        boolean needInList = false;
         for(int i=0; i < needs.size(); i++) {
             if(needs.get(i).equals(needsToRemove)) {
                 needs.remove(i);
+                needInList = true;
             }
+        }
+        if(!needInList){
+            throw new NeedNotFoundException("Need not found");
         }
     }
 

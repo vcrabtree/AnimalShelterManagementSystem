@@ -59,7 +59,7 @@ public class VolunteerTest {
            }
 
     @Test
-    public void checkAnimalStatusTest(){
+    public void checkAnimalStatusTest() throws AnimalNotFound {
             Volunteer v1 = new Volunteer("One","Password");
             AnimalList al1 = new AnimalList();
             al1.addAnimal(1,"Max","Dog","Shiba Inu","Tan","Puppy", "Male",12,1);

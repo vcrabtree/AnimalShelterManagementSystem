@@ -24,12 +24,12 @@ public class ManagerLogin {
 
     }
 
-    public int checkStatus(int id, AnimalList listIn){
+    public int checkStatus(int id, AnimalList listIn) throws AnimalNotFound {
         Animal animalToCheck;
         animalToCheck = listIn.searchListA(id);
         return animalToCheck.getStatus();
     }
-    public String getNeeds(int id, AnimalList listIn){
+    public String getNeeds(int id, AnimalList listIn) throws AnimalNotFound {
 //        Animal animalToCheck;
 //        animalToCheck = listIn.searchListA(id);
 
@@ -38,11 +38,11 @@ public class ManagerLogin {
         return needs;
     }
 
-    public void addNeeds(int id, String needIn, AnimalList listIn){
+    public void addNeeds(int id, String needIn, AnimalList listIn) throws AnimalNotFound {
         listIn.addNeeds(id,needIn);
             }
 
-    public void addRecords(int id, String recordIn, AnimalList listIn){
+    public void addRecords(int id, String recordIn, AnimalList listIn) throws AnimalNotFound {
         listIn.addRecords(id,recordIn);
 
     }
@@ -54,11 +54,11 @@ public class ManagerLogin {
             }
         }
     }
-    public void updateRecords(String recordName){
-        System.out.println("in progress, not yet implemented");
-
-
-        }
+//    public void updateRecords(String recordName){
+//        System.out.println("in progress, not yet implemented");
+//
+//
+//        }
     public void addTask(Task taskIn){
             toDoList.add(taskIn);
         }
@@ -67,9 +67,13 @@ public class ManagerLogin {
         return this.manager;
     }
 
-    public void removeAnimal(int aID, AnimalList animalListIn) throws EmptyListException {
+    public void removeAnimal(int aID, AnimalList animalListIn) throws EmptyListException, AnimalNotFound {
         animalListIn.removeAnimal(aID);
 
+    }
+
+    public void removeNeeds(int aID, AnimalList animalListIn, String need) throws NeedNotFoundException, AnimalNotFound {
+        animalListIn.removeNeeds(aID,need);
     }
 
     public void viewAnimalList(AnimalList animalListIn)  {
@@ -83,8 +87,10 @@ public class ManagerLogin {
 
     }
 
-    public void updateTask(TodoList listIn, String taskToUpdate, String newTaskName, int newPriority) {
-        listIn.updateTask(taskToUpdate, newTaskName, newPriority);
+    public void updateTask(TodoList listIn, String taskToUpdate, String newTaskName, int newPriority) throws TaskException {
+        Task temp;
+        temp = listIn.updateTask(taskToUpdate, newTaskName, newPriority);
+        listIn.addTask(temp);
     }
 
 

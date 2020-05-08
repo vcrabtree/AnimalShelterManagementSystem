@@ -39,8 +39,7 @@ public class EmployeeCollection {
 
     public boolean checkCredentials(String ID, String password) throws AccountDoesNotExistException {
         if(managers.get(ID) == null){
-            //throw new AccountDoesNotExistException(("Account doesn't exist"));
-            return false;
+            throw new AccountDoesNotExistException(("Account doesn't exist"));
         }
         else{
             return managers.get(ID).getPassword().equals(password);

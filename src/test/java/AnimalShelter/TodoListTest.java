@@ -81,7 +81,7 @@ public class TodoListTest {
      *
     */
 
-    public void updateTaskTest(){
+    public void updateTaskTest() throws TaskException {
         // Create To-Do List
         TodoList todo = new TodoList();
 

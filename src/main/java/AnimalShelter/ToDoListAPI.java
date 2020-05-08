@@ -1,9 +1,7 @@
 package AnimalShelter;
 
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
-import java.util.PriorityQueue;
 
 public interface ToDoListAPI {
 
@@ -13,7 +11,7 @@ public interface ToDoListAPI {
 
     void removeTask(String taskToRemove) throws TaskException;
 
-    void updateTask(String taskToUpdate, String newTaskName, int newPriority) throws IOException;
+    Task updateTask(String taskToUpdate, String newTaskName, int newPriority) throws IOException, TaskException;
 
     String getToDoList();
 
