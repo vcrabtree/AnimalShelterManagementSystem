@@ -89,4 +89,9 @@ public class Manager {
         return false;
     }
 
+    public void updateTasks(int priority, String taskIn, TodoList list){
+        Task newTask = new Task(priority,taskIn);
+        list.addTask(newTask);
+    }
+
 }
