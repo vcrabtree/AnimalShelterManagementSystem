@@ -104,10 +104,10 @@ public class AnimalList {
 
     }
 
-    public void getRecords(int ID) throws AnimalNotFound {
+    public String getRecords(int ID) throws AnimalNotFound {
         int i = searchList(ID);
         if(i != -1){
-            animalList.get(i).getRecords();
+            return animalList.get(i).getRecords();
         }
         else{
             throw new AnimalNotFound("**Animal ID is invalid, this animal is not in the system**");

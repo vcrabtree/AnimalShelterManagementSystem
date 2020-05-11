@@ -84,11 +84,11 @@ public class Animal {
         status = newStatus;
     }
 
-    public void getRecords() {
-        for(int i=0; i < records.size(); i++) {
-            System.out.println(records.get(i));
-        }
-    }
+//    public void getRecords() {
+//        for(int i=0; i < records.size(); i++) {
+//            System.out.println(records.get(i));
+//        }
+//    }
 
     public void addRecords(String newRecord) {
         records.add(newRecord);
@@ -108,6 +108,19 @@ public class Animal {
             stringNeeds = "Needs list is empty";
         }
         return stringNeeds;
+    }
+
+    public String getRecords() {
+        String stringRec = "";
+        for(int i=0; i < records.size(); i++) {
+            stringRec += records.get(i) + "\n";
+            //System.out.println(needs.get(i)+"\n");
+        }
+
+        if(records.size() <= 0){
+            stringRec = "Needs list is empty";
+        }
+        return stringRec;
     }
 
     public void addNeeds(String newNeeds) {

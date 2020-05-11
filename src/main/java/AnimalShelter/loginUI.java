@@ -37,12 +37,14 @@ public class loginUI {
 
 
         if (null != username && !volunteer) do {
-            System.out.println("MANAGER VIEW:");
+            System.out.println("__________________");
+            System.out.println("\n \n MANAGER VIEW:");
             System.out.println("Select from the menu option:");
             System.out.println("1. Check animal status"); //done
             System.out.println("2. Get animal needs"); //done
             System.out.println("2a. Add animal needs"); //done
-            System.out.println("3. Add animal records"); //done
+            System.out.println("3. Add animal records");
+            System.out.println("3a. Get animal records");//done
             System.out.println("4. Remove animal needs");
             //System.out.println("5. Update animal records");
             System.out.println("5. View Animal List"); //done
@@ -166,6 +168,26 @@ public class loginUI {
                     }
                     catch(InputMismatchException e){
                         System.out.println("Input Invalid - animal ID must be an integer");
+                    }
+                    break;
+                case "Get animal records":
+                case "3a":
+                    try {
+                        System.out.println("Enter animal id: ");
+                        int aID = input.nextInt();
+
+                        System.out.println(Login.getRecords(aID, list1));
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                    } catch (NullPointerException e){
+                        System.out.println("Animal ID is not valid");
+                    }catch(InputMismatchException e){
+                        System.out.println("Input Invalid - animal ID must be an integer");
+                    }
+                    catch(AnimalNotFound e){
+                        System.out.println("**Animal ID is invalid, this animal is not in the system**");
+                        System.out.println("Shelter Animals: ");
+                        Login.viewAnimalList(list1);
                     }
                     break;
                 case "Remove animal needs":
