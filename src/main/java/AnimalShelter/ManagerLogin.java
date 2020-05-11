@@ -38,6 +38,13 @@ public class ManagerLogin {
         return needs;
     }
 
+    public String getRecords(int id, AnimalList listIn) throws AnimalNotFound {
+
+        String records;
+        records = listIn.getRecords(id);
+        return records;
+    }
+
     public void addNeeds(int id, String needIn, AnimalList listIn) throws AnimalNotFound {
         listIn.addNeeds(id,needIn);
             }
