@@ -122,6 +122,20 @@ public class AnimalList {
         return stringAns;
     }
 
+    public String getAdoptionList() {
+        String stringAns = "Name \t ID\t Species\t Breed\n";
+        for(int i=0; i < animalList.size(); i++) {
+            if(animalList.get(i).getStatus() == 3){
+            stringAns += animalList.get(i).getName() +"\t" + animalList.get(i).getId() + "\t" + animalList.get(i).getSpecies() +"\t" + animalList.get(i).getBreed() + "\n";
+            //System.out.println(needs.get(i)+"\n");
+        }}
+
+        if(stringAns.compareTo("Name \t ID\n") ==0){
+            stringAns = "No Animals Ready for Adoption";
+        }
+        return stringAns;
+    }
+
 //    public String viewList(){
 //        String anList = "Name\t ID\n";
 //        Iterator<Animal> itr = animalList.iterator();
