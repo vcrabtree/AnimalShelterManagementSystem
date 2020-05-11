@@ -85,9 +85,9 @@ class TestClassTest {
     @Test
     public void addRecordsTest() throws AnimalNotFound {
         AnimalList a1 = new AnimalList();
-        a1.addAnimal(101,"Doodle", "Canine","Boarder Collie", "Black","3","male",15,1);
-        a1.addAnimal(21,"Dara","Dog","Collie","Black", "2","F",12,1);
-        a1.addAnimal(102,"Spike", "Pantherophis guttatus","Corn Snake", "Orange","3","male",2,1);
+        a1.addAnimal(101,"Doodle", "Canine","Boarder Collie", "Black","3","male",15,2);
+        a1.addAnimal(21,"Dara","Canine","Collie","Black", "2","F",12,3);
+        a1.addAnimal(102,"Spike", "Pantherophis guttatus","Corn Snake", "Orange","3","male",2,3);
         a1.addRecords(101,"record test");
         a1.addRecords(101, "went to the vet");
         a1.getRecords(101);  //getRecords

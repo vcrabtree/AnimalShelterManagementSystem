@@ -48,6 +48,7 @@ public class loginUI {
             System.out.println("4. Remove animal needs");
             //System.out.println("5. Update animal records");
             System.out.println("5. View Animal List"); //done
+            System.out.println("5a. View Animal Adoption List"); //done
             System.out.println("6. Add task");//done
             System.out.println("6a. Update task");
             System.out.println("6b. View To-Do List");//done
@@ -219,6 +220,18 @@ public class loginUI {
                 case "View Animal List":
                 case "5":
                     Login.viewAnimalList(list1);
+//                    System.out.println("Enter record name: ");
+//                    String upRecName = input.next();
+//                    try {
+//                        Login.updateRecords(upRecName);
+//                    } catch (IllegalArgumentException e) {
+//                        System.out.println(e.getMessage());
+//                    }
+                    break;
+                case "View Adoption Animal List":
+                case "5a":
+                    System.out.println("Animals Ready for Adoption:");
+                    Login.viewAnimalAdoptionList(list1);
 //                    System.out.println("Enter record name: ");
 //                    String upRecName = input.next();
 //                    try {
@@ -455,7 +468,10 @@ public class loginUI {
 
     public static AnimalList animalCollect() {
         AnimalList a1 = new AnimalList();
-        a1.addAnimal(1, "love", "puppy", "pup", "tan", "2", "Male", 8, 3);
+        a1.addAnimal(1, "Love", "puppy", "pup", "tan", "2", "Male", 8, 3);
+        a1.addAnimal(101,"Doodle", "Canine","Boarder Collie", "Black","3","male",15,2);
+        a1.addAnimal(21,"Dara","Canine","Collie","Black", "2","F",12,3);
+        a1.addAnimal(102,"Spike", "Pantherophis guttatus","Corn Snake", "Orange","3","male",2,3);
         //a1.addNeeds(1,"shower");
 
         return a1;
