@@ -20,9 +20,6 @@ https://docs.google.com/document/d/1Cy9UlET1GBpwWRRIkQZY8_9ZT2RWNB5WJ9-tQyO29qk/
 Zenhub Board:
 https://app.zenhub.com/workspaces/comp-345-team-5e60009c68d1b5ac6b247f58/board?repos=244984978
 
-Slack Workspace:
-https://join.slack.com/t/comp345teamhq/shared_invite/enQ
-
 ## Sprint One
 Sprit One Goal: To be able to manage a database of animals through a seperate, password locked class
 
