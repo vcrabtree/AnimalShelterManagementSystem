@@ -1,4 +1,4 @@
-# Comp-345-Team: AnimalShelter.Animal Shelter Software
+# Animal Shelter Software
 We will be creating a software to help animal shelters better manage their facility
 
 Includes but is not limited to:
